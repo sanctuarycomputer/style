@@ -83,7 +83,7 @@ than complex, hard-to-find identities.
 Optimize for composability over semantics.
 
 **Good:**
-```
+```html
 <div class='small-12 medium-3 large-2 columns background-color-mid-green padding-top text-center'>
   <h6 class='uppercase letter-spacing'>Hello World!</h6>
 </div>
@@ -95,7 +95,7 @@ Class.
 
 **Bad:**
 
-```
+```html
 <div class='hello-world-wrapper'>
   <h6>Hello World!</h6>
 </div>
@@ -106,30 +106,30 @@ changes means I have to search the codebase for its definition.
 
 ### Only use IDs for Route Level Selectors
 
-```
+```html
 <div id='homepage'>
   <!-- Nothing on this template is outside of this ID -->
 </div>
 ```
 
-```
+```css
 #homepage {
   // Nothing in this file is outside of this wrapper!
 }
 ```
 
-### Only use a SCSS Grid that can handle breakpoints from HTML only.
+### Use a SCSS Grid that can handle breakpoints from HTML only.
 
 It's important to bake responsive layouts into HTML.  Rearranging a
 Layout for mobile is painstaking work, and it's even harder from CSS.
 
 **Good:**
-```
+```html
 <div class='small-12 medium-6 large-3 small-only-text-center hide-for-xlarge-up columns'></div>
 ```
 
 **Bad:**
-```
+```html
 <div class='12-columns other-styling-done-from-css'></div>
 ```
 
