@@ -1,4 +1,6 @@
-# Sanctuary Style
+# Sanctuary Computer Code Styleguide
+
+![yup](http://i.giphy.com/xTiTntB8WSMsSDZIDm.gif)
 
 ## CSS
 
