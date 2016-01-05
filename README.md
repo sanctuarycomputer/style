@@ -13,7 +13,7 @@ CSS files full of dead code.
 Instead, we use basic CSS classes that add just a single attribute or
 two.  These are used like building blocks together in a div to quickly
 style and maintain the codebase.  Make a small change to a class, and 
-see that change propogate neatly throughout your app.  It's the Functional
+see that change propagate neatly throughout your app.  It's the Functional
 Programmer's approach to styling!
 
 ---
@@ -21,7 +21,7 @@ Programmer's approach to styling!
 ### CSS File Structure
 
 Use `global`, `routes`, `components`, and `extensions` folders in your
-CSS filestructure:
+CSS file structure:
 
 ```
 -- styles
@@ -67,7 +67,7 @@ CSS filestructure:
     Should you need specific styling for a component that doesn't
     make sense to do inline, you can use a component level SCSS file.
     The component should have a top level class that corresponds to it's
-    name, and that Class should corresponde to a file in the
+    name, and that Class should correspond to a file in the
     components directory.  **Important:** If you need to make a 
     component look different on a route basis, style it generically here,
     then use the corresponding route file to override it in that view.
