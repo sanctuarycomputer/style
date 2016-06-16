@@ -153,3 +153,51 @@ when I can roll my own ninja-shit?  Here's some good reasons:
 TLDR; You should almost always use a framework.  It saves time and helps
 the team over a longer timeline.
 
+## CSS
+by Sanctuary Computer
+
+### Naming
+
+Proper naming of folders, files, styles, data attributes etc. ensures
+sanity is preserved throughout a codebase, and makes debugging a whole heck of a lot easier :)
+
+#####Data Attributes:
+All React rendered components (including components and handlers) should have a `data-attribute` at the highest level for easier debugging using the inspector.
+
+e.g.
+
+UI Component
+```
+export default class UserComponent extends Component {
+    ...
+
+    return {
+        render(
+            <div data-component="UserComponent">
+                ...
+            </div>
+        )
+    }
+}
+```
+
+Handler Component
+```
+export default class Home extends Component {
+    ...
+
+    return {
+        render(
+            <div data-handler="Home">
+                ...
+            </div>
+        )
+    }
+}
+```
+
+
+### Styling
+
+### Import/Export
+
