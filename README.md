@@ -153,8 +153,7 @@ when I can roll my own ninja-shit?  Here's some good reasons:
 TLDR; You should almost always use a framework.  It saves time and helps
 the team over a longer timeline.
 
-## CSS
-by Sanctuary Computer
+## React
 
 ### Naming
 
@@ -169,35 +168,36 @@ e.g.
 UI Component
 ```
 export default class UserComponent extends Component {
+  ...
+
+  return {
+    render(
+      <div data-component="UserComponent">
+        ...
+      </div>
+      )
+    }
+  }
+  ```
+
+  Handler Component
+  ```
+  export default class Home extends Component {
     ...
 
     return {
-        render(
-            <div data-component="UserComponent">
-                ...
-            </div>
+      render(
+        <div data-handler="Home">
+          ...
+        </div>
         )
+      }
     }
-}
-```
-
-Handler Component
-```
-export default class Home extends Component {
-    ...
-
-    return {
-        render(
-            <div data-handler="Home">
-                ...
-            </div>
-        )
-    }
-}
-```
+    ```
 
 
-### Styling
+    ### Styling
 
-### Import/Export
+    ### Import/Export
+
 
