@@ -7,7 +7,7 @@
 At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that radiate purpose and intent can be challenging across developer teams. In addition, the process of coming up with new class names for components can lead to naming conflicts, dead CSS, and overall a bloated codebase. So, instead of writing monolithic chunks of CSS, we write small, unique, immutable property classes that can be shared and utilized to form larger components. It's the Functional Programmer's approach to styling
 <br>
 
-## The Journey to functional CSS?
+## The Journey to functional CSS
 
 <br>
 
