@@ -2,19 +2,41 @@
 
 ![yup](http://i.giphy.com/xTiTntB8WSMsSDZIDm.gif)
 
-## CSS
+## Introduction
 
-At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that radiate purpose and intent can be challenging across developer teams. In addition, the process of coming up with new class names for components can lead to naming conflicts, dead CSS, and overall a bloated codebase. So, instead of writing monolithic chunks of CSS, we write small, unique, immutable property classes that can be shared and utilized to form larger components. It's the Functional Programmer's approach to styling
-<br>
-
-## The Journey to functional CSS
+At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that radiate purpose and intent can be challenging. In addition, the process of coming up with new class names for components can lead to naming conflicts, dead CSS, and overall a bloated codebase. So, instead of writing monolithic chunks of CSS, we write small, unique, immutable utility classes that can be utilized to form larger components. This also helps our team build robust design systems with our code. It's the Functional Programmer's approach to styling!
 
 <br>
 
-Writing "quick" and "easy" CSS class selectors to make our markup look lean and free of classes is an everyday struggle for developers. When writing Semantic CSS, we style our markup with the intention that the person who is studying it will understand its intent and purpose. However, it usually leads to an accumulation of verbose and immutable styles that become hard to re-use across our application.
+## Semantic CSS vs Functional CSS
+
+<br>
+The approach to writing semantic CSS is to write classes that are easy to read and that showcase element hierarchy. The intention of this is to help one understand where a module begins or ends. In shorter words, the Semantic approach trys to sell you on readability!
 <br>
 <br>
 
+```
+
+const Hero = ({ headline, tagline }: { headline: string, tagline?: string }) => {
+  return (
+    <div className="hero">
+      <h1 className="hero-title">Heading</h1>
+      <p className="hero-tagline">Tagline</p>
+    </div>
+  );
+};
+
+```
+
+<br>
+
+### What is the actual problem of using Semantic CSS then ?
+
+<br>
+
+The above example looks fine! So whats the problem then? Let's give another example of a component that you will commonly come across in a codebase.
+<br>
+<br>
 
 `./article.css`
 
@@ -79,3 +101,4 @@ export function ArticleCard() {
 Resources
 https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
 https://levelup.gitconnected.com/im-finally-giving-functional-css-a-chance-a9ab284dde12 -->
+<!-- https://medium.com/geekculture/css-approaches-for-2021-semantic-and-non-semantic-styling-for-the-current-state-of-web-development-1581916ca1c0 -->
