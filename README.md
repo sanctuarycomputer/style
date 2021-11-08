@@ -11,7 +11,7 @@ At Sanctuary Computer, we are constantly striving to find new ways to write scal
 
 <br>
 
-Writing "quick" and "easy" CSS class selectors to make our markup look lean and free of classes is an everyday struggle for developers. When writing Semantic CSS, we style our markup with the intention that the person who is studying it will understand its intent and purpose. However, it usually leads to an accumulation of verbose and immutable styles that become hard to re-use across our projects.
+Writing "quick" and "easy" CSS class selectors to make our markup look lean and free of classes is an everyday struggle for developers. When writing Semantic CSS, we style our markup with the intention that the person who is studying it will understand its intent and purpose. However, it usually leads to an accumulation of verbose and immutable styles that become hard to re-use across our application.
 <br>
 <br>
 
