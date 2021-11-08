@@ -11,11 +11,12 @@ At Sanctuary Computer, we are constantly striving to find new ways to write scal
 
 <br>
 
-Writing "quick" and "easy" CSS class selectors to make our markup look lean and free of classes is an everyday struggle for developers. When writting Semantic CSS, we approach styling our markup with the intention of providing every element/selector with meaning and purpose.
+Writing "quick" and "easy" CSS class selectors to make our markup look lean and free of classes is an everyday struggle for developers. . When writing Semantic CSS, we style our markup to provide every element/selector with meaning and purpose.
 <br>
 <br>
 
 Semantic CSS
+
 ```
   .article {
     width: 800px;
@@ -64,25 +65,9 @@ export function ArticleCard() {
 
 ```
 
-In the example above, we defined four unique classes to this component. Let' say we needed to add a new feature to this component: 
+In the example above, we defined four unique classes within this componet. Lets say we wanted to re-use this component on another feature: display a preview of anarticle in a card layout.
 
 
-Say I needed to add a new feature to the site: displaying a preview of an article in a card layout.
-
-Say this article preview card had a full bleed image on the top, a padded content section below, a bold title, and some smaller body text.
-
-Say it looked exactly like an author bio.
-
-
-
-
-have to take this approach:
-
-For a simple component we defined multiple classes that will only be connected to this components - if we end up wanting to append or resuse these style we would have to take this appraoch:
-
-
-
-
-Resources 
+Resources
 https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
 https://levelup.gitconnected.com/im-finally-giving-functional-css-a-chance-a9ab284dde12
