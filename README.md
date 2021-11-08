@@ -63,7 +63,7 @@ import "./article-card.css";
 export function ArticleCard() {
   return (
     <article class="article">
-      <h1 class="article__title">Function and Utility first CSS </h1>
+      <h1 class="article__title">Functional Programing: The CSS Way </h1>
       <div class="article__publicationDate">10th April, 2021</div>
       <div class="article__content">
         <p>At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that radiate purpose and intent can be challenging across developer teams.</p>
