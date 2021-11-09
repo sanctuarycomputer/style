@@ -253,7 +253,7 @@ When appending utility class names - use the package `classnames`.
 import React from "react";
 import cx from "classnames";
 
-const FullWidthVideo = ({ isVideoFullWidth }) => {
+const VideoCompoent = ({ isVideoFullWidth }) => {
   return (
     <div
       className={cx(
@@ -277,7 +277,7 @@ export default FullWidthVideo;
 import React from "react";
 import cx from "classnames";
 
-const FullWidthVideo = ({ isVideoFullWidth }) => {
+const VideoCompoent = ({ isVideoFullWidth }) => {
   return (
     <div
       className={`InlineVideo relative w-1/2 overflow-hidden flex flex-col ${
