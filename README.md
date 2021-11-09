@@ -130,7 +130,7 @@ Thanks to Tailwind's intuitive naming conventions, we can visualize how this com
 </style>
 ```
 
-As you can see, this is hard to read and we really don't know what the class names mean when looking at them right off the bat
+As you can see, this is hard to read and we really don't know what the class names mean when looking at them right off the bat. It would also take a long time to figure out if you could reuse these styles in the future
 
 <br>
 
