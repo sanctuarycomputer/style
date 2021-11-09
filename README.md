@@ -12,7 +12,43 @@ At Sanctuary Computer, we are constantly striving to find new ways to write scal
 
 ## CSS Composability Style
 
-Write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. <br> <br>
+Write verbose HTML over verbose CSS. (It's easier to maintain one
+file than two!). Think of your CSS like little Lego bricks, rather
+than complex, hard-to-find identities.
+
+Optimize for composability over semantics.
+
+**Good:**
+
+```html
+<div
+  class="small-12 medium-3 large-2 columns background-color-mid-green padding-top text-center"
+>
+  <h6 class="uppercase letter-spacing">Hello World!</h6>
+</div>
+```
+
+In this example, I can visualize exactly how the file will look purely from
+reading the HTML, and I can remove an add an attribute simply by removing a
+Class.
+
+**Bad:**
+
+```html
+<div class="hello-world-wrapper">
+  <h6>Hello World!</h6>
+</div>
+```
+
+Here I have no idea what `.hello-world-wrapper` will look like, and making
+changes means I have to search the codebase for its definition.
+
+---
+
+<br>
+
+## Composability with Tailwind
+
 As of recent, we adopted a utility-first CSS framework called [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes in a functional way. Tailwind is bundled with many utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
 To demonstrate the advantages of using Tailwind, lets compare the two approaches of **Using Tailwind** to writing **Pure semantic CSS**
 
@@ -41,6 +77,16 @@ As developers, we spend a great amount of time thinking of class names rather th
 <br>
 
 When taking into consideration the code example above, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add an atribute, all we have to do is append or remove a class name. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`.
+
+Within the context of dev shops, we are constantly either handing
+
+since there is a set of standardization with tailwind
+
+large companies where developers may come and go regularly
+
+
+
+
 
 
 
