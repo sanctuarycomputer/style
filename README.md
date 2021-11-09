@@ -50,11 +50,10 @@ changes means I have to search the codebase for its definition.
 ## Composability with Tailwind
 
 As of recent, we adopted a utility-first CSS framework called [Tailwind](https://tailwindcss.com/) to help us compose and standardize our utility classes. Tailwind is bundled with many utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
-To demonstrate the advantages of using Tailwind, lets compare using tailwind and using pure css
+<br>
 
 <br>
 
-:nail_care: **Using Tailwind**
 
 As developers, we spend a great amount of time thinking of class names rather than actually applying them. Tailwind remedies this cognitive load by offering an abdunance of intutive class names that allow us to easily build components with just a handeful of utility classes.
 
@@ -76,17 +75,7 @@ As developers, we spend a great amount of time thinking of class names rather th
 
 <br>
 
-Tailwinds intutive naming conventions alows us to visualize exactly how this component will appear in our html. If we also want to remove or add an atribute, all we have to do is append or remove a class name. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`.
-
-<br>
-
-:page_with_curl:**Pure CSS**
-
-<br>
-A custom CSS system like BEM will require a varying amount of time to learn when onboarding a developer.The purpose of writing semantic CSS is to write classes that are easy to read and that showcase element hierarchy. The intention of this is to help one understand where a module begins or ends. In shorter words, the Semantic approach trys to sell you on readability!
-<br>
-
-<br>
+Tailwinds intutive naming conventions alows us to visualize exactly how this component will appear in our html. If we also want to remove or add an atribute, all we have to do is append or remove a class name. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like this :
 
 ```html
 <div class="chat-notification">
@@ -136,6 +125,9 @@ A custom CSS system like BEM will require a varying amount of time to learn when
   }
 </style>
 ```
+
+
+
 
 <!--
 Resources
