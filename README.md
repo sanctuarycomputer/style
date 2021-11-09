@@ -12,7 +12,8 @@ At Sanctuary Computer, we are constantly striving to find new ways to write scal
 
 ## CSS Composability Style
 
-It is important to write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. As of recent, we adopted a utility-first CSS framework called [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes in a functional way. Tailwind is bundled with many utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
+Write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. <br> <br>
+As of recent, we adopted a utility-first CSS framework called [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes in a functional way. Tailwind is bundled with many utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
 To demonstrate the advantages of using Tailwind, lets compare the two approaches of **Using Tailwind** to writing **Pure semantic CSS**
 
 <br>
@@ -20,8 +21,6 @@ To demonstrate the advantages of using Tailwind, lets compare the two approaches
 :nail_care: **The Tailwind Way**
 
 As developers, we spend a great amount of time thinking of class names rather than actually applying them. Tailwind remedies this cognitive load by offering an abdunance of intutive class names that allow us to easily build components with just a handeful of utility classes.
-
-
 
 <br>
 
@@ -38,9 +37,12 @@ As developers, we spend a great amount of time thinking of class names rather th
   </div>
 </div>
 ```
+
 <br>
 
-When looking at the markup above, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add an atribute, all we have to do is append or remove a class. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`.
+When taking into consideration the code example above, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add an atribute, all we have to do is append or remove a class name. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`.
+
+
 
 <!-- In terms of mainatanbility and onboarding
 
@@ -48,7 +50,6 @@ When looking at the markup above, we can visualize exactly how this file will ap
 
 The uniform class names that Tailwind provides allow for speedy maintainer onboarding. This can be especially useful in large companies where developers may come and go regularly. A custom CSS system will require a varying amount of time to learn and reproduce.
  -->
-
 
 <!--
 <br>
