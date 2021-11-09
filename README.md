@@ -8,20 +8,20 @@ At Sanctuary Computer, we are constantly striving to find new ways to write scal
 
 <br>
 
-### Optimize for composability over semantics.
+##  Composability over semantics.
+
+It is important to write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. As of recent, we adopted the utility-first CSS framework [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes in a functional way. Tailwind is packed with classes like `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up. Let's compare two examples of using tailwind to writing pure semantic css:
 
 <br>
 
-
-It is important to write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. As of recent, we adopted the utility-first CSS framework [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes. Tailwind is packed with  classes like `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up. Let's compare two examples of using tailwind to writing pure semantic css:
-
-
-:nail_care: **The Tailwind Way :**  
+:nail_care: **The Tailwind Way :**
 
 ```html
-<div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+<div
+  class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
+>
   <div class="flex-shrink-0">
-    <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
+    <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo" />
   </div>
   <div>
     <div class="text-xl font-medium text-black">ChitChat</div>
@@ -30,14 +30,24 @@ It is important to write verbose HTML over verbose CSS. Think of your CSS like l
 </div>
 ```
 
-In this example, we can visualue exactly how this file will appear in our HTML, and we can remove an add an attribute simply by removing  or appending a class name.
+In the above example, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add and atribute, all we have to do is either append or remove a class name. This approach allows us to implement a completely custom component design without  having to rely on writting verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`
+
+
+
+ having to rely on  writting a single line  CSS style class names like : `chat-notification` and `chat-notification-logo-wrapper`. Furthermore, this allows us to think of r 
+
+<br>
 
 :x: **Pure Css:**
 
 ```html
 <div class="chat-notification">
   <div class="chat-notification-logo-wrapper">
-    <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
+    <img
+      class="chat-notification-logo"
+      src="/img/logo.svg"
+      alt="ChitChat Logo"
+    />
   </div>
   <div class="chat-notification-content">
     <h4 class="chat-notification-title">ChitChat</h4>
@@ -79,18 +89,11 @@ In this example, we can visualue exactly how this file will appear in our HTML, 
 </style>
 ```
 
-In the above example,  their is no idication of what `.chat-notifications` will look like
+In the above example, their is no idication of what `.chat-notifications` will look like
 Here I have no idea what `.chat-notifcations` will look like, and making
 changes means I have to search the codebase for its definition. One can argue that this looks better when it comes to semantics but in terms of composition and reusability it's simply not.
 
-
-
-
-
-
-
-
-<!-- 
+<!--
 
 
 
@@ -143,7 +146,7 @@ The above example looks fine! So whats the problem then? Let's give another exam
 
 
 <!-- Semantic CSS -->
-<!-- 
+<!--
   .article {
     width: 800px;
     border: 1px solid #ddd;
@@ -194,8 +197,7 @@ export function ArticleCard() {
   );
 } -->
 
-
-<!-- 
+<!--
 Resources
 https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
 https://levelup.gitconnected.com/im-finally-giving-functional-css-a-chance-a9ab284dde12 --> -->
