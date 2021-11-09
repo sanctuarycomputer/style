@@ -90,6 +90,7 @@ Tailwinds intutive naming conventions help us visualize exactly how this compone
     />
   </div>
   <div class="chat-notification-content">
+    
     <h4 class="chat-notification-title">Sanctuary Chat App</h4>
     <p class="chat-notification-message">You have a new message!</p>
   </div>
