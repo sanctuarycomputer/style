@@ -84,7 +84,7 @@ Tailwinds intutive naming conventions alows us to visualize exactly how this com
 <br>
 
 
-**Pure Semantic CSS**
+:page_with_curl: **Pure Semantic CSS**
 <br>
 A custom CSS system like BEM will require a varying amount of time to learn and reproduce. 
 
