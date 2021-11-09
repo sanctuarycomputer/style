@@ -56,7 +56,7 @@ As developers, we spend a great amount of time thinking of class names rather th
 
 :white_check_mark: **Good**
 
-![alt text](sanc.png "Title")
+![alt text](chat.png "Title")
 
 ```html
 <div
@@ -78,7 +78,7 @@ Tailwinds intutive naming conventions help us visualize exactly how this compone
 
 :x: **Bad:**
 
-![alt text](sanc.png "Title")
+![alt text](chat.png "Title")
 
 ```html
 <div class="chat-notification">
@@ -90,7 +90,7 @@ Tailwinds intutive naming conventions help us visualize exactly how this compone
     />
   </div>
   <div class="chat-notification-content">
-    
+
     <h4 class="chat-notification-title">Sanctuary Chat App</h4>
     <p class="chat-notification-message">You have a new message!</p>
   </div>
