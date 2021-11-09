@@ -171,20 +171,21 @@ CSS file structure:
 
 ```
 
-- `index.scss` - Require all of your SCC files here, including tailwinds base configuration
+- `index.scss` - Require all of your SCC files here, including default tailwind imports
+
   ```css
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
-  @import './fonts';
-  @import './utilities';
-  @import './vars';
-  @import './global';
-  @import './styles';
+  @import "./fonts";
+  @import "./utilities";
+  @import "./vars";
+  @import "./global";
+  @import "./styles";
   ```
 
 - `/components`
-  Should you need specific styling for a Component that doesn't make sense to use `tailwind` or `inline styles`, you can use a component level SCSS file. Components are more complex and usually compose multiple atoms and elements together
+  Should you need specific styling for a Component that doesn't make sense to use *tailwind *or _inline styles_, you can use a component level SCSS file. Components are more complex and usually compose multiple atoms and elements together
 
 - `/atoms`
   Sometimes we confuse `atoms` with `blocks` or `components`. To avoid making this mistake, try to categorize atoms as entities that have a single side effect to them. Think of them as small resuable pieces: Buttons, Links and Images.
@@ -216,21 +217,3 @@ CSS file structure:
   ```
 
     <br>
-
-- `Utilities`
-  This is where we load all actions: brief transitions
-
-  ```css
-  @keyframes appearFromBottom {0% {
-  transform: translateY(5rem);
-  opacity: 0;
-  }
-  100% {
-  transform: translateY(0);
-  opacity: 1;
-  }
-  ```
-
-```
-
-```
