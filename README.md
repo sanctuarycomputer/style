@@ -164,12 +164,24 @@ CSS file structure:
           |-- vars.scss
           |-- font.scss
           |-- global.scss
-          |-- _colors.scss
+          |-- utilities.scss
     |-- package.json
     |-- yarn.lock
     |-- tailwind.config.js
 
 ```
+
+- `index.scss` - Require all of your SCC files here, including tailwinds base configuration
+  ```css
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  @import './fonts';
+  @import './utilities';
+  @import './vars';
+  @import './global';
+  @import './styles';
+  ```
 
 - `/components`
   Should you need specific styling for a Component that doesn't make sense to use `tailwind` or `inline styles`, you can use a component level SCSS file. Components are more complex and usually compose multiple atoms and elements together
@@ -181,13 +193,16 @@ CSS file structure:
   To put simply an element is a single part of a larger group: `Icons` , `InlineLinks`
 
 - `/blocks`
- Blocks are relate to data coming 
+  Blocks are related to content data coming from a CMS or a data source. There functionallity is tied data and are not as composable as components
+
+- `fonts.scss`
+  This is where we import and categorize our various font families
 
 - `vars.scss`
-This file is where we store global variables to access them in any given scope of our application. We usually put height properties in here. In the pase we would include color variables but tailwind now takes care of that :) 
-<br>
+  This file is where we store global variables to access them in any given scope of our application. We usually put height properties in here. In the past we would include color variables but we now handle that in our taildwind configuration:
+  <br>
 
-  ````css
+  ```css
   <!-- vars.scss -->
 
   $nav-height: 3.75rem;
@@ -198,4 +213,24 @@ This file is where we store global variables to access them in any given scope o
   $desktop-nav-notification-bar-height: 7.5rem;
   $subnav-height: 2.9375rem;
   $desktop-subnav-height: 4.25rem;
-  ````
+  ```
+
+    <br>
+
+- `Utilities`
+  This is where we load all actions: brief transitions
+
+  ```css
+  @keyframes appearFromBottom {0% {
+  transform: translateY(5rem);
+  opacity: 0;
+  }
+  100% {
+  transform: translateY(0);
+  opacity: 1;
+  }
+  ```
+
+```
+
+```
