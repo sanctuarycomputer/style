@@ -12,7 +12,12 @@ At Sanctuary Computer, we are constantly striving to find new ways to write scal
 
 ##  CSS Composability Style
 
-It is important to write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. As of recent, we adopted the utility-first CSS framework [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes in a functional way. Tailwind is packed with classes like `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up. Let's compare two  approaches to writing CSS: **The Functional Way: Tailwind** and **Pure Semantic CSS**
+It is important to write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. As of recent, we adopted a utility-first CSS framework called [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes in a functional way. Tailwind is bundled with many utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
+ To demonstrate the advantages of using Tailwind, lets compare the two approaches of **Using Tailwind** to writing  **Pure semantic CSS**
+
+
+
+
 
 <br>
 
@@ -31,8 +36,10 @@ It is important to write verbose HTML over verbose CSS. Think of your CSS like l
   </div>
 </div>
 ```
-We can visualize exactly how this file will appear in our HTML. If we also want to remove or add and atribute, all we have to do is either append or remove a class name. 
+From this example, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add and atribute, all we have to do is  append or remove a class name to one of our elements. This makes making changes to classes 
 
+
+Make a small change to a class, and see that change propagate neatly throughout your app. It's the Functional Programmer's approach to styling!
 
 This approach allows us to implement a completely custom component design without  having to rely on writting verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`.
 
