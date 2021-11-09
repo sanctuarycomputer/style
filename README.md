@@ -184,6 +184,28 @@ CSS file structure:
   @import "./styles";
   ```
 
+- `tailwind.config.j`
+  After setting up tailwind CSS for your application - you should see a file in the root directory called tailwind.config.js. By default, Tailwind will look for an optional tailwind.config.js file at the root of your project where you can define any customizations.
+
+  ```
+    const colors = require('tailwindcss/colors')
+    module.exports = {
+      theme: {
+        colors: {
+          gray: colors.coolGray,
+          blue: "#FFFFF,
+          red: colors.rose,
+          pink: colors.fuchsia,
+        },
+        fontFamily: {
+          sans: ['Graphik', 'sans-serif'],
+          serif: ['Merriweather', 'serif'],
+        },
+      ...........
+    }
+
+  ```
+
 - `/components`
   Should you need specific styling for a Component that doesn't make sense to use *tailwind *or _inline styles_, you can use a component level SCSS file. Components are more complex and usually compose multiple atoms and elements together
 
@@ -191,7 +213,7 @@ CSS file structure:
   Sometimes we confuse atoms with `blocks` and `components`. To avoid making this mistake, try to categorize atoms as entities that have a single side effect to them. Think of them as small resuable pieces: Buttons, Links and Images.
 
 - `/elements`
-  To put simply an element is a single part of a larger group: *Icons*  and  *InlineLinks*
+  To put simply an element is a single part of a larger group: _Icons_ and _InlineLinks_
 
 - `/blocks`
   Blocks are related to content data coming from a CMS or a data source. There functionallity is tied data and are not as composable as components
