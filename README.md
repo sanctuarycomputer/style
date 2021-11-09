@@ -82,8 +82,6 @@ Tailwinds intutive naming conventions alows us to visualize exactly how this com
 
 :x:  **Bad**
 
-<br>
-
 ```html
 <div class="chat-notification">
   <div class="chat-notification-logo-wrapper">
