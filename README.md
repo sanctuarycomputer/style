@@ -74,8 +74,6 @@ As developers, we spend a great amount of time thinking of class names rather th
 
 Tailwinds intutive naming conventions help us visualize exactly how this component will appear in our html. If we also want to remove or add an atribute, all we have to do is append or remove a class name. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like we do  in the example bellow:
 
-<br>
-
 :x:  **Bad:**
 
 ```html
@@ -126,6 +124,8 @@ Tailwinds intutive naming conventions help us visualize exactly how this compone
   }
 </style>
 ```
+
+
 
 <!--
 Resources
