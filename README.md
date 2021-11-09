@@ -53,11 +53,10 @@ As of recent, we adopted a utility-first CSS framework called [Tailwind](https:/
 
 As developers, we spend a significant amount of time thinking of class names rather than applying them. Tailwind remedies this process by offering us a whole suite of well-composed class names right out of the box. We don't even have to write a single line of semantic CSS; check it out!
 
-:white_check_mark: **Good**
-
-![alt text](chat.png "Title")
-
 ```html
+
+<!-- ChatAppNotifcation.tsx -->
+
 <div
   class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
 >
@@ -71,13 +70,15 @@ As developers, we spend a significant amount of time thinking of class names rat
 </div>
 ```
 
-<br>
-
-Tailwinds intutive naming conventions help us visualize exactly how this component will appear in our html. If we also want to remove or add an atribute, all we have to do is append or remove a class name. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like we do in the example bellow:
-
-:x: **Bad:**
+**Result:**
 
 ![alt text](chat.png "Title")
+
+<br>
+
+Thanks to Tailwind's intuitive naming conventions, we can visualize how this component will appear in our HTML. If we also want to remove or add an attribute, we just have to append or remove a class name. This approach enables us to implement a completely custom component design without writing verbose and non-reusable class names. Let's try writing the exact Chat app Notification component using semantic CSS
+
+:x: **Bad:**
 
 ```html
 <div class="chat-notification">
