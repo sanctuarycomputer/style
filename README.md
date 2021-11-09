@@ -36,15 +36,17 @@ It is important to write verbose HTML over verbose CSS. Think of your CSS like l
   </div>
 </div>
 ```
-From this example, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add and atribute, all we have to do is  append or remove a class name to one of our elements. This makes making changes to classes 
 
 
-Make a small change to a class, and see that change propagate neatly throughout your app. It's the Functional Programmer's approach to styling!
+As developers, we spend a great amount of time thinking of classnames rather than actually applying them to our markup. Tailwind remedies this cognitive load  by offering an abdunance of intutive class names that alows us to easily build components with a handeful of utility classnames. 
 
-This approach allows us to implement a completely custom component design without  having to rely on writting verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`.
+The coding 
 
- <!-- having to rely on  writting a single line  CSS style class names like : `chat-notification` and `chat-notification-logo-wrapper`. Furthermore, this allows us to think of r  -->
 
+
+From this example, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add an atribute, all we have to do is  append or remove a class. This approach allows us to implement a completely custom component design without  having to rely on writting verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`. 
+
+<!-- 
 <br>
 
 :x: **Pure Semantic CSS:**
@@ -102,7 +104,7 @@ In the above example, their is no idication of what `.chat-notifications` will l
 Here I have no idea what `.chat-notifcations` will look like, and making
 changes means I have to search the codebase for its definition. One can argue that this looks better when it comes to semantics but in terms of composition and reusability it's simply not.
 
- It adds no real value to the structure of the page and gives no clue how it should look. This can lead to bugs as its purpose and scope are unclear.
+ It adds no real value to the structure of the page and gives no clue how it should look. This can lead to bugs as its purpose and scope are unclear. -->
 
 <!--
 
