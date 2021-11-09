@@ -12,12 +12,11 @@ At Sanctuary Computer, we are constantly striving to find new ways to write scal
 
 <br>
 
-Write verbose HTML over verbose CSS.  (It's easier to maintain one
-file than two!).  Think of your CSS like little Lego bricks, rather
-than complex, hard-to-find identities. As of recent, we adopted the utility-first CSS framework [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes. Tailwind is packed with  classes like `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white` that can be used to build any design, directly in your mark up. Let's compare two examples of using tailwind to writing pure semantic css.
+
+It is important to write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. As of recent, we adopted the utility-first CSS framework [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes. Tailwind is packed with  classes like `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up. Let's compare two examples of using tailwind to writing pure semantic css:
 
 
-**Good :** 
+**The Tailwind Way :**  :nail_care:
 
 ```html
 <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
@@ -30,8 +29,8 @@ than complex, hard-to-find identities. As of recent, we adopted the utility-firs
   </div>
 </div>
 ```
-I can visualize exactly how the file will look purely from
-reading the HTML, and I can remove an add an attribute simply by removing a class name. 
+
+In this example, we can visualue exactly how this file will appear in our HTML, and we can remove an add an attribute simply by removing a class name or appending another class name
 
 **Bad:**
 
@@ -80,6 +79,7 @@ reading the HTML, and I can remove an add an attribute simply by removing a clas
 </style>
 ```
 
+In the above example,  their is no idication of what `.chat-notifications` will look like
 Here I have no idea what `.chat-notifcations` will look like, and making
 changes means I have to search the codebase for its definition. One can argue that this looks better when it comes to semantics but in terms of composition and reusability it's simply not.
 
