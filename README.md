@@ -8,6 +8,97 @@ At Sanctuary Computer, we are constantly striving to find new ways to write scal
 
 <br>
 
+### Optimize for composability over semantics.
+
+<br>
+
+Write verbose HTML over verbose CSS.  (It's easier to maintain one
+file than two!).  Think of your CSS like little Lego bricks, rather
+than complex, hard-to-find identities. As of recent, we adopted the utility-first CSS framework [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes. Tailwind is packed with  classes like `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white` that can be used to build any design, directly in your mark up. Let's compare two examples of using tailwind to writing pure semantic css.
+
+
+**Good :** 
+
+```html
+<div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+  <div class="flex-shrink-0">
+    <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
+  </div>
+  <div>
+    <div class="text-xl font-medium text-black">ChitChat</div>
+    <p class="text-gray-500">You have a new message!</p>
+  </div>
+</div>
+```
+I can visualize exactly how the file will look purely from
+reading the HTML, and I can remove an add an attribute simply by removing a class name. 
+
+**Bad:**
+
+```html
+<div class="chat-notification">
+  <div class="chat-notification-logo-wrapper">
+    <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
+  </div>
+  <div class="chat-notification-content">
+    <h4 class="chat-notification-title">ChitChat</h4>
+    <p class="chat-notification-message">You have a new message!</p>
+  </div>
+</div>
+
+<style>
+  .chat-notification {
+    display: flex;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  .chat-notification-logo-wrapper {
+    flex-shrink: 0;
+  }
+  .chat-notification-logo {
+    height: 3rem;
+    width: 3rem;
+  }
+  .chat-notification-content {
+    margin-left: 1.5rem;
+    padding-top: 0.25rem;
+  }
+  .chat-notification-title {
+    color: #1a202c;
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+  .chat-notification-message {
+    color: #718096;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>
+```
+
+Here I have no idea what `.chat-notifcations` will look like, and making
+changes means I have to search the codebase for its definition. One can argue that this looks better when it comes to semantics but in terms of composition and reusability it's simply not.
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+
+
+
+
+
 ## Semantic CSS vs Functional CSS
 
 <br>
@@ -41,6 +132,15 @@ The above example looks fine! So whats the problem then? Let's give another exam
 `./article.css`
 
 ```
+
+
+
+
+
+
+
+
+
 
 <!-- Semantic CSS -->
 
@@ -94,7 +194,7 @@ export function ArticleCard() {
   );
 }
 
-```
+``` -->
 
 <!-- In the example above, we defined four unique classes within this componet. Lets say we wanted to re-use this component on another feature: display a preview of anarticle in a card layout.
 
