@@ -54,8 +54,11 @@ As of recent, we adopted a utility-first CSS framework called [Tailwind](https:/
 
 <br>
 
-
 As developers, we spend a great amount of time thinking of class names rather than actually applying them. Tailwind remedies this cognitive load by offering an abdunance of intutive class names that allow us to easily build components with just a handeful of utility classes.
+
+<br>
+
+:white_check_mark:
 
 <br>
 
@@ -75,7 +78,12 @@ As developers, we spend a great amount of time thinking of class names rather th
 
 <br>
 
-Tailwinds intutive naming conventions alows us to visualize exactly how this component will appear in our html. If we also want to remove or add an atribute, all we have to do is append or remove a class name. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like we do in Semantic css :
+Tailwinds intutive naming conventions alows us to visualize exactly how this component will appear in our html. If we also want to remove or add an atribute, all we have to do is append or remove a class name. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like we do in pure Semantic css :
+
+<br>
+:x:
+
+<br>
 
 ```html
 <div class="chat-notification">
@@ -125,9 +133,6 @@ Tailwinds intutive naming conventions alows us to visualize exactly how this com
   }
 </style>
 ```
-
-
-
 
 <!--
 Resources
