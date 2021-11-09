@@ -60,8 +60,6 @@ As developers, we spend a great amount of time thinking of class names rather th
 
 :white_check_mark:
 
-<br>
-
 ```html
 <div
   class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
