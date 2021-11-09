@@ -143,7 +143,7 @@ The above example looks fine! So whats the problem then? Let's give another exam
 
 
 <!-- Semantic CSS -->
-
+<!-- 
   .article {
     width: 800px;
     border: 1px solid #ddd;
@@ -175,11 +175,11 @@ The above example looks fine! So whats the problem then? Let's give another exam
 
 `./ArticleCard.jsx`
 
-```
+``` -->
 
 <!-- JSX Component using Semantic CSS -->
 
-import React from "react";
+<!-- import React from "react";
 import "./article-card.css";
 
 export function ArticleCard() {
@@ -192,13 +192,11 @@ export function ArticleCard() {
       </div>
     </article>
   );
-}
+} -->
 
-``` -->
 
-<!-- In the example above, we defined four unique classes within this componet. Lets say we wanted to re-use this component on another feature: display a preview of anarticle in a card layout.
-
+<!-- 
 Resources
 https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
-https://levelup.gitconnected.com/im-finally-giving-functional-css-a-chance-a9ab284dde12 -->
+https://levelup.gitconnected.com/im-finally-giving-functional-css-a-chance-a9ab284dde12 --> -->
 <!-- https://medium.com/geekculture/css-approaches-for-2021-semantic-and-non-semantic-styling-for-the-current-state-of-web-development-1581916ca1c0 -->
