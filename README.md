@@ -56,48 +56,7 @@ As developers, we spend a great amount of time thinking of class names rather th
 
 :white_check_mark: **Good**
 
-<div class="chat-notification">
-  <div class="chat-notification-logo-wrapper">
-    <img class="chat-notification-logo" src="asset/sanc.png" alt="ChitChat Logo">
-  </div>
-  <div class="chat-notification-content">
-    <h4 class="chat-notification-title">Sanctuary Chat App</h4>
-    <p class="chat-notification-message">You have a new message!</p>
-  </div>
-</div>
-
-<style>
-  .chat-notification {
-    display: flex;
-    max-width: 24rem;
-    margin: 0 auto;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-  .chat-notification-logo-wrapper {
-    flex-shrink: 0;
-  }
-  .chat-notification-logo {
-    height: 3rem;
-    width: 3rem;
-  }
-  .chat-notification-content {
-    margin-left: 1.5rem;
-    padding-top: 0.25rem;
-  }
-  .chat-notification-title {
-    color: #1a202c;
-    font-size: 1.25rem;
-    line-height: 1.25;
-  }
-  .chat-notification-message {
-    color: #718096;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-</style>
+![alt text](sanc.png "Title")
 
 ```html
 <div
@@ -115,59 +74,18 @@ As developers, we spend a great amount of time thinking of class names rather th
 
 <br>
 
-Tailwinds intutive naming conventions help us visualize exactly how this component will appear in our html. If we also want to remove or add an atribute, all we have to do is append or remove a class name. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like we do  in the example bellow:
+Tailwinds intutive naming conventions help us visualize exactly how this component will appear in our html. If we also want to remove or add an atribute, all we have to do is append or remove a class name. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like we do in the example bellow:
 
-:x:  **Bad:**
+:x: **Bad:**
 
-<div class="chat-notification">
-  <div class="chat-notification-logo-wrapper">
-    <img class="chat-notification-logo" src="asset/sanc.png" alt="ChitChat Logo">
-  </div>
-  <div class="chat-notification-content">
-    <h4 class="chat-notification-title">Sanctuary Chat App</h4>
-    <p class="chat-notification-message">You have a new message!</p>
-  </div>
-</div>
-<style>
-  .chat-notification {
-    display: flex;
-    max-width: 24rem;
-    margin: 0 auto;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-  .chat-notification-logo-wrapper {
-    flex-shrink: 0;
-  }
-  .chat-notification-logo {
-    height: 3rem;
-    width: 3rem;
-  }
-  .chat-notification-content {
-    margin-left: 1.5rem;
-    padding-top: 0.25rem;
-  }
-  .chat-notification-title {
-    color: #1a202c;
-    font-size: 1.25rem;
-    line-height: 1.25;
-  }
-  .chat-notification-message {
-    color: #718096;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-</style>
-
+![alt text](sanc.png "Title")
 
 ```html
 <div class="chat-notification">
   <div class="chat-notification-logo-wrapper">
     <img
       class="chat-notification-logo"
-     src="asset/sanc.png"
+      src="asset/sanc.png"
       alt="ChitChat Logo"
     />
   </div>
@@ -210,8 +128,6 @@ Tailwinds intutive naming conventions help us visualize exactly how this compone
   }
 </style>
 ```
-
-
 
 <!--
 Resources
