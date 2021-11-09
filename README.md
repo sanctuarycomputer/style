@@ -10,18 +10,17 @@ At Sanctuary Computer, we are constantly striving to find new ways to write scal
 
 <br>
 
-##  CSS Composability Style
+## CSS Composability Style
 
 It is important to write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. As of recent, we adopted a utility-first CSS framework called [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes in a functional way. Tailwind is bundled with many utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
- To demonstrate the advantages of using Tailwind, lets compare the two approaches of **Using Tailwind** to writing  **Pure semantic CSS**
-
-
-
-
+To demonstrate the advantages of using Tailwind, lets compare the two approaches of **Using Tailwind** to writing **Pure semantic CSS**
 
 <br>
 
 :nail_care: **The Tailwind Way**
+
+As developers, we spend a great amount of time thinking of classnames than actually applying them to our markup. Tailwind remedies this cognitive load by offering an abdunance of intutive class names that alows us to easily build components with just a handeful of utility classes.
+<br>
 
 ```html
 <div
@@ -37,16 +36,11 @@ It is important to write verbose HTML over verbose CSS. Think of your CSS like l
 </div>
 ```
 
+The coding example above de
 
-As developers, we spend a great amount of time thinking of classnames rather than actually applying them to our markup. Tailwind remedies this cognitive load  by offering an abdunance of intutive class names that alows us to easily build components with a handeful of utility classnames. 
+From this example, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add an atribute, all we have to do is append or remove a class. This approach allows us to implement a completely custom component design without having to rely on writting verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`.
 
-The coding 
-
-
-
-From this example, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add an atribute, all we have to do is  append or remove a class. This approach allows us to implement a completely custom component design without  having to rely on writting verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`. 
-
-<!-- 
+<!--
 <br>
 
 :x: **Pure Semantic CSS:**
