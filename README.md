@@ -50,9 +50,8 @@ changes means I have to search the codebase for its definition.
 ## Composability with Tailwind
 
 As of recent, we adopted a utility-first CSS framework called [Tailwind](https://tailwindcss.com/) to help us compose and standardize our utility classes. Tailwind is bundled with many utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
-<br>
 
-As developers, we spend a great amount of time thinking of class names rather than actually applying them. Tailwind remedies this cognitive load by offering an abdunance of intutive class names that allow us to easily build components with just a handeful of utility classes.
+As developers, we spend a significant amount of time thinking of class names rather than applying them. Tailwind remedies this process by offering us a whole suite of well-composed class names right out of the box. We don't even have to write a single line of semantic CSS; check it out!
 
 :white_check_mark: **Good**
 
