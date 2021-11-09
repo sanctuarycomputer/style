@@ -19,7 +19,7 @@ To demonstrate the advantages of using Tailwind, lets compare the two approaches
 
 :nail_care: **The Tailwind Way**
 
-As developers, we spend a great amount of time thinking of classnames rather than actually applying them. Tailwind remedies this cognitive load by offering an abdunance of intutive class names that allow us to easily build components with just a handeful of utility classes.
+As developers, we spend a great amount of time thinking of class names rather than actually applying them. Tailwind remedies this cognitive load by offering an abdunance of intutive class names that allow us to easily build components with just a handeful of utility classes.
 
 
 
@@ -38,13 +38,16 @@ As developers, we spend a great amount of time thinking of classnames rather tha
   </div>
 </div>
 ```
+<br>
 
-When looking at the markup above, Ww can visualize exactly how this file will appear in our HTML. If we also want to remove or add an atribute, all we have to do is append or remove a class. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`. Also, because of the  uniform 
+When looking at the markup above, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add an atribute, all we have to do is append or remove a class. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`.
+
+<!-- In terms of mainatanbility and onboarding
 
 
 
 The uniform class names that Tailwind provides allow for speedy maintainer onboarding. This can be especially useful in large companies where developers may come and go regularly. A custom CSS system will require a varying amount of time to learn and reproduce.
-
+ -->
 
 
 <!--
