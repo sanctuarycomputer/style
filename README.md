@@ -2,92 +2,29 @@
 
 ![yup](http://i.giphy.com/xTiTntB8WSMsSDZIDm.gif)
 
-## CSS
+## Introduction
 
-Our CSS style is designed to optimize for easy maintainability and
-tweakability directly from the HTML.  Zigzagging between a HTML and
-a CSS file to make sweeping changes through a codebase is hard, and
-because CSS is usually *append only*, you'll often end up with bloated
-CSS files full of dead code.
-
-Instead, we use basic CSS classes that add just a single attribute or
-two.  These are used like building blocks together in a div to quickly
-style and maintain the codebase.  Make a small change to a class, and 
-see that change propagate neatly throughout your app.  It's the Functional
-Programmer's approach to styling!
+At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that radiate purpose and intent can be challenging. In addition, the process of coming up with new class names for components can lead to naming conflicts, dead CSS, and overall a bloated codebase. So, instead of writing monolithic chunks of CSS, we prefer to write small, unique, immutable utility classes that can be used to form larger components. This also helps our team build robust design systems with our code. It's the Functional Programmer's approach to styling!
 
 ---
 
-### CSS File Structure
+<br>
 
-Use `global`, `routes`, `components`, and `extensions` folders in your
-CSS file structure:
+## CSS Composability Style
 
-```
--- styles
-    |-- app.scss
-    |-- foundation.scss
-    |-- settings.scss
-    |-- global
-        |-- _variables.scss
-        |-- _colors.scss
-        |-- _styleguide.scss
-        |-- _buttons.scss
-        |-- _inputs.scss
-        |-- _utils.scss
-    |-- routes
-        |-- _homepage.scss
-        |-- _posts.scss
-        |-- _posts-show.scss
-        |-- _posts-index.scss
-    |-- components
-        |-- _comment-box.scss
-    |-- extensions
-        |-- _masonry.scss
-```
-
-- `app.scss`
-    Require all of your SCSS files here.
-
-- `foundation.scss` and `settings.scss` (optional)
-    When using the `ember-cli-foundation-scss` addon for grids, 
-    these files will be installed on the top level here.
-
-- `global/`
-    This is where "always present" CSS lives.  Typography, HTML
-    elements, colors, transition speeds and utility classes.
-
-- `routes/`
-    Every Route Template in an app should be wrapped in an ID
-    corresponding to the route's name.  This ID then corresponds
-    to a SCSS file.  **Important:** A Route Level Template and 
-    route level SCSS file must entirely wrapped at the ID level.
-
-- `components/`
-    Should you need specific styling for a component that doesn't
-    make sense to do inline, you can use a component level SCSS file.
-    The component should have a top level class that corresponds to it's
-    name, and that Class should correspond to a file in the
-    components directory.  **Important:** If you need to make a 
-    component look different on a route basis, style it generically here,
-    then use the corresponding route file to override it in that view.
-
-- `extensions/`
-    Use this folder to override the appearance of CSS from external
-    libraries.
-
-### CSS Composability Style
-
-Write verbose HTML over verbose CSS.  (It's easier to maintain one
-file than two!).  Think of your CSS like little Lego bricks, rather
+Write verbose HTML over verbose CSS. (It's easier to maintain one
+file than two!). Think of your CSS like little Lego bricks, rather
 than complex, hard-to-find identities.
 
 Optimize for composability over semantics.
 
 **Good:**
+
 ```html
-<div class='small-12 medium-3 large-2 columns background-color-mid-green padding-top text-center'>
-  <h6 class='uppercase letter-spacing'>Hello World!</h6>
+<div
+  class="small-12 medium-3 large-2 columns background-color-mid-green padding-top text-center"
+>
+  <h6 class="uppercase letter-spacing">Hello World!</h6>
 </div>
 ```
 
@@ -98,7 +35,7 @@ Class.
 **Bad:**
 
 ```html
-<div class='hello-world-wrapper'>
+<div class="hello-world-wrapper">
   <h6>Hello World!</h6>
 </div>
 ```
@@ -106,98 +43,259 @@ Class.
 Here I have no idea what `.hello-world-wrapper` will look like, and making
 changes means I have to search the codebase for its definition.
 
-### Only use IDs for Route Level Selectors
+---
+
+<br>
+
+## Composability with Tailwind
+
+As of recent, we adopted a utility-first CSS framework called [Tailwind](https://tailwindcss.com/) to help us compose and standardize our utility classes. Tailwind is bundled with many utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
+
+As developers, we spend a significant amount of time thinking of class names rather than applying them. Tailwind remedies this process by offering us a whole suite of well-composed class names right out of the box. We don't even have to write a single line of semantic CSS; check it out!
 
 ```html
-<div id='homepage'>
-  <!-- Nothing on this template is outside of this ID -->
+<!-- ChatAppNotifcation.tsx -->
+
+<div
+  class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
+>
+  <div class="flex-shrink-0">
+    <img class="h-12 w-12" src="/asset/sanc.png" alt="ChitChat Logo" />
+  </div>
+  <div>
+    <div class="text-xl font-medium text-black">Sanctuary Chat Ap</div>
+    <p class="text-gray-500">You have a new message!</p>
+  </div>
 </div>
 ```
 
-```css
-#homepage {
-  // Nothing in this file is outside of this wrapper!
-}
-```
+**Result:**
 
-### Use a SCSS Grid that can handle breakpoints from HTML only.
+![alt text](chat.png "Title")
 
-It's important to bake responsive layouts into HTML.  Rearranging a
-Layout for mobile is painstaking work, and it's even harder from CSS.
+<br>
 
-**Good:**
+Thanks to Tailwind's intuitive naming conventions, we can visualize how this component will appear in our HTML. If we also want to remove or add an attribute, we just have to append or remove a class name. This approach enables us to implement a completely custom component design without writing verbose and non-reusable class names. Let's try writing the exact Chat app Notification component using semantic CSS
+
+:x: **Bad:**
+
 ```html
-<div class='small-12 medium-6 large-3 small-only-text-center hide-for-xlarge-up columns'></div>
-```
+<!-- ChatAppNotifcation.tsx -->
 
-**Bad:**
-```html
-<div class='12-columns other-styling-done-from-css'></div>
-```
+<div class="chat-notification">
+  <div class="chat-notification-logo-wrapper">
+    <img
+      class="chat-notification-logo"
+      src="asset/sanc.png"
+      alt="ChitChat Logo"
+    />
+  </div>
+  <div class="chat-notification-content">
+    <h4 class="chat-notification-title">Sanctuary Chat App</h4>
+    <p class="chat-notification-message">You have a new message!</p>
+  </div>
+</div>
 
-Some nice grids are:
-- http://foundation.zurb.com/grid.html
-- http://www.basscss.com/
-
-### Frameworks *aren't* bad!
-
-CSS Frameworks get a bad rap.  Why use a big, bloated CSS framework
-when I can roll my own ninja-shit?  Here's some good reasons:
-
-- Grid Frameworks give you a battle-tested way of handling Responsive layouts
-- There's often Cross Browser CSS problems that Frameworks have already solved
-- It's (basically) a myth that a CSS framework will slow down the browser.
-- CSS Frameworks are designed to reduce complexity, making maintenance (way) easier!
-- You can always "not" use the grid for pages that don't make sense gridded!
-
-TLDR; You should almost always use a framework.  It saves time and helps
-the team over a longer timeline.
-
-## React
-
-### Naming
-
-Proper naming of folders, files, styles, data attributes etc. ensures
-sanity is preserved throughout a codebase, and makes debugging a whole heck of a lot easier :)
-
-#####Data Attributes:
-All React rendered components (including components and handlers) should have a `data-attribute` at the highest level for easier debugging using the inspector.
-
-e.g.
-
-UI Component
-```
-export default class UserComponent extends Component {
-  ...
-
-  return {
-    render(
-      <div data-component="UserComponent">
-        ...
-      </div>
-      )
-    }
+<style>
+  .chat-notification {
+    display: flex;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
+  .chat-notification-logo-wrapper {
+    flex-shrink: 0;
+  }
+  .chat-notification-logo {
+    height: 3rem;
+    width: 3rem;
+  }
+  .chat-notification-content {
+    margin-left: 1.5rem;
+    padding-top: 0.25rem;
+  }
+  .chat-notification-title {
+    color: #1a202c;
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+  .chat-notification-message {
+    color: #718096;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>
+```
+
+As you can see, this is hard to read and we really don't know what the class names mean when looking at them right off the bat. It would also take a long time to figure out if you could reuse these styles in the future
+
+<br>
+
+## CSS file structure and extending tailwind
+
+Even though we love tailwind - there are many ocssaions where we still need to write CSS and SCSS to bring life to our UI :)
+
+Use `components`, `atoms`, `blocks`, and `elements` folders in your
+CSS file structure:
+
+```
+-- dirroot
+    |-- src
+        |-- styles
+            |-- blocks
+              |-- index.sccs
+              |-- FullText.scss
+              |-- Hero.scss
+              ...
+            |-- atoms
+              |-- index.sccs
+              |-- Button.scss
+              |-- Link.scss
+             ....
+            |-- components
+              |-- index.sccs
+              |-- Card.scss
+              |-- Nav.scss
+              ...
+            |-- elements
+            index.scss
+              |-- Icon.scss
+              |-- LinkDescriptions.scss
+          |-- vars.scss
+          |-- font.scss
+          |-- global.scss
+          |-- utilities.scss
+    |-- package.json
+    |-- yarn.lock
+    |-- tailwind.config.js
+
+```
+
+- `index.scss` - Require all of your SCC files here, including default tailwind imports
+
+  ```css
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  @import "./fonts";
+  @import "./utilities";
+  @import "./vars";
+  @import "./global";
+  @import "./styles";
   ```
 
-  Handler Component
-  ```
-  export default class Home extends Component {
-    ...
+- `tailwind.config.j`
+  After setting up tailwind CSS for your application - you should see a file in the root directory called tailwind.config.js. By default, Tailwind will look for an optional tailwind.config.js file at the root of your project where you can define any customizations.
 
-    return {
-      render(
-        <div data-handler="Home">
-          ...
-        </div>
-        )
-      }
+  ```
+    const colors = require('tailwindcss/colors')
+    module.exports = {
+      theme: {
+        colors: {
+          gray: colors.coolGray,
+          blue: "#FFFFF,
+          red: colors.rose,
+          pink: colors.fuchsia,
+        },
+        fontFamily: {
+          sans: ['Graphik', 'sans-serif'],
+          serif: ['Merriweather', 'serif'],
+        },
+      ...........
     }
-    ```
+
+  ```
+
+- `/components`
+  Should you need specific styling for a Component that doesn't make sense to use *tailwind *or _inline styles_, you can use a component level SCSS file. Components are more complex and usually compose multiple atoms and elements together
+
+- `/atoms`
+  Sometimes we confuse atoms with `blocks` and `components`. To avoid making this mistake, try to categorize atoms as entities that have a single side effect to them. Think of them as small resuable pieces: Buttons, Links and Images.
+
+- `/elements`
+  To put simply an element is a single part of a larger group: _Icons_ and _InlineLinks_
+
+- `/blocks`
+  Blocks are related to content data coming from a CMS or a data source. There functionallity is tied data and are not as composable as components
+
+- `fonts.scss`
+  This is where we import and categorize our various font families
+
+- `vars.scss`
+  This file is where we store global variables to access them in any given scope of our application. We usually put height properties in here. In the past we would include color variables but we now handle that in our taildwind configuration:
+  <br>
+
+  ```css
+  <!-- vars.scss -->
+
+  $nav-height: 3.75rem;
+  $desktop-nav-height: 3.75rem;
+  $notification-bar-height: 3.75rem;
+  $desktop-notification-bar-height: 3.75rem;
+  $nav-notification-bar-height: 7.5rem;
+  $desktop-nav-notification-bar-height: 7.5rem;
+  $subnav-height: 2.9375rem;
+  $desktop-subnav-height: 4.25rem;
+  ```
+
+    <br>
+
+## React and Tailwind Gotacha's
+
+When appending utility class names - use the package `classnames`.
+
+## DO
+
+```js
+import React from "react";
+import cx from "classnames";
+
+const VideoCompoent = ({ isVideoFullWidth }) => {
+  return (
+    <div
+      className={cx(
+        "InlineVideo relative w-1/2 overflow-hidden flex flex-col",
+        {
+          "w-full": isVideoFullWidth === true,
+        }
+      )}
+    >
+      ...
+    </div>
+  );
+};
+
+export default FullWidthVideo;
+```
+
+## Dont!
+
+```js
+import React from "react";
+import cx from "classnames";
+
+const VideoCompoent = ({ isVideoFullWidth }) => {
+  return (
+    <div
+      className={`InlineVideo relative w-1/2 overflow-hidden flex flex-col ${
+        isVideoFullWidth ? "w-full" : null
+      }`}
+    >
+      ...
+    </div>
+  );
+};
+```
 
 
-    ### Styling
-
-    ### Import/Export
+more here .... 
 
 
+
+## React Native and Tailwind
+
+
+more here .... 
