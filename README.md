@@ -4,7 +4,7 @@
 
 ## Introduction
 
-At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that radiate purpose and intent can be challenging. In addition, the process of coming up with new class names for components can lead to naming conflicts, dead CSS, and overall a bloated codebase. So, instead of writing monolithic chunks of CSS, we write small, unique, immutable utility classes that can be utilized to form larger components. This also helps our team build robust design systems with our code. It's the Functional Programmer's approach to styling!
+At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that radiate purpose and intent can be challenging. In addition, the process of coming up with new class names for components can lead to naming conflicts, dead CSS, and overall a bloated codebase. So, instead of writing monolithic chunks of CSS, we prefer to write small, unique, immutable utility classes that can be used to form larger components. This also helps our team build robust design systems with our code. It's the Functional Programmer's approach to styling!
 
 <br>
 
@@ -14,7 +14,7 @@ It is important to write verbose HTML over verbose CSS. Think of your CSS like l
 
 <br>
 
-:nail_care: **The Tailwind Way :**
+:nail_care: **The Tailwind Way**
 
 ```html
 <div
