@@ -58,7 +58,7 @@ As developers, we spend a great amount of time thinking of class names rather th
 
 <br>
 
-:white_check_mark:
+:white_check_mark: **Good**
 
 ```html
 <div
@@ -79,7 +79,8 @@ As developers, we spend a great amount of time thinking of class names rather th
 Tailwinds intutive naming conventions alows us to visualize exactly how this component will appear in our html. If we also want to remove or add an atribute, all we have to do is append or remove a class name. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like we do in pure Semantic css :
 
 <br>
-:x:
+
+:x:  **Bad**
 
 <br>
 
