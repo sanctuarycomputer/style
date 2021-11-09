@@ -16,7 +16,7 @@ At Sanctuary Computer, we are constantly striving to find new ways to write scal
 It is important to write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. As of recent, we adopted the utility-first CSS framework [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes. Tailwind is packed with  classes like `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up. Let's compare two examples of using tailwind to writing pure semantic css:
 
 
-**The Tailwind Way :**  :nail_care:
+:nail_care: **The Tailwind Way :**  
 
 ```html
 <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
@@ -30,9 +30,9 @@ It is important to write verbose HTML over verbose CSS. Think of your CSS like l
 </div>
 ```
 
-In this example, we can visualue exactly how this file will appear in our HTML, and we can remove an add an attribute simply by removing a class name or appending another class name
+In this example, we can visualue exactly how this file will appear in our HTML, and we can remove an add an attribute simply by removing  or appending a class name.
 
-**Bad:**
+:x: **Pure Css:**
 
 ```html
 <div class="chat-notification">
