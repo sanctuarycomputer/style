@@ -180,9 +180,22 @@ CSS file structure:
 - `/elements`
   To put simply an element is a single part of a larger group: `Icons` , `InlineLinks`
 
-- `blocks/`
-  Consider blocks to be the subcategoriy 
-
+- `/blocks`
+ Blocks are relate to data coming 
 
 - `vars.scss`
-This file is where we store global variables
+This file is where we store global variables to access them in any given scope of our application. We usually put height properties in here. In the pase we would include color variables but tailwind now takes care of that :) 
+<br>
+
+  ````css
+  <!-- vars.scss -->
+
+  $nav-height: 3.75rem;
+  $desktop-nav-height: 3.75rem;
+  $notification-bar-height: 3.75rem;
+  $desktop-notification-bar-height: 3.75rem;
+  $nav-notification-bar-height: 7.5rem;
+  $desktop-nav-notification-bar-height: 7.5rem;
+  $subnav-height: 2.9375rem;
+  $desktop-subnav-height: 4.25rem;
+  ````
