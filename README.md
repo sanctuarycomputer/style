@@ -55,6 +55,7 @@ As of recent, we adopted a utility-first CSS framework called [Tailwind](https:/
 As developers, we spend a great amount of time thinking of class names rather than actually applying them. Tailwind remedies this cognitive load by offering an abdunance of intutive class names that allow us to easily build components with just a handeful of utility classes.
 
 :white_check_mark: **Good**
+
 <div class="chat-notification">
   <div class="chat-notification-logo-wrapper">
     <img class="chat-notification-logo" src="asset/sanc.png" alt="ChitChat Logo">
@@ -97,6 +98,7 @@ As developers, we spend a great amount of time thinking of class names rather th
     line-height: 1.5;
   }
 </style>
+
 ```html
 <div
   class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
@@ -117,7 +119,6 @@ Tailwinds intutive naming conventions help us visualize exactly how this compone
 
 :x:  **Bad:**
 
-
 <div class="chat-notification">
   <div class="chat-notification-logo-wrapper">
     <img class="chat-notification-logo" src="asset/sanc.png" alt="ChitChat Logo">
@@ -127,7 +128,6 @@ Tailwinds intutive naming conventions help us visualize exactly how this compone
     <p class="chat-notification-message">You have a new message!</p>
   </div>
 </div>
-
 <style>
   .chat-notification {
     display: flex;
@@ -160,6 +160,7 @@ Tailwinds intutive naming conventions help us visualize exactly how this compone
     line-height: 1.5;
   }
 </style>
+
 
 ```html
 <div class="chat-notification">
