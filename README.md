@@ -289,3 +289,13 @@ const VideoCompoent = ({ isVideoFullWidth }) => {
   );
 };
 ```
+
+
+more here .... 
+
+
+
+## React Native and Tailwind
+
+
+more here .... 
