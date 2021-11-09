@@ -6,11 +6,13 @@
 
 At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that radiate purpose and intent can be challenging. In addition, the process of coming up with new class names for components can lead to naming conflicts, dead CSS, and overall a bloated codebase. So, instead of writing monolithic chunks of CSS, we prefer to write small, unique, immutable utility classes that can be used to form larger components. This also helps our team build robust design systems with our code. It's the Functional Programmer's approach to styling!
 
+---
+
 <br>
 
-##  Composability over semantics.
+##  CSS Composability Style
 
-It is important to write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. As of recent, we adopted the utility-first CSS framework [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes in a functional way. Tailwind is packed with classes like `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up. Let's compare two examples of using tailwind to writing pure semantic css:
+It is important to write verbose HTML over verbose CSS. Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities. As of recent, we adopted the utility-first CSS framework [Tailwind](https://tailwindcss.com/) to help us compose and scafold our style classes in a functional way. Tailwind is packed with classes like `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up. Let's compare two  approaches to writing CSS: **The Functional Way: Tailwind** and **Pure Semantic CSS**
 
 <br>
 
@@ -29,16 +31,16 @@ It is important to write verbose HTML over verbose CSS. Think of your CSS like l
   </div>
 </div>
 ```
-
-In the above example, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add and atribute, all we have to do is either append or remove a class name. This approach allows us to implement a completely custom component design without  having to rely on writting verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`
-
+We can visualize exactly how this file will appear in our HTML. If we also want to remove or add and atribute, all we have to do is either append or remove a class name. 
 
 
- having to rely on  writting a single line  CSS style class names like : `chat-notification` and `chat-notification-logo-wrapper`. Furthermore, this allows us to think of r 
+This approach allows us to implement a completely custom component design without  having to rely on writting verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`.
+
+ <!-- having to rely on  writting a single line  CSS style class names like : `chat-notification` and `chat-notification-logo-wrapper`. Furthermore, this allows us to think of r  -->
 
 <br>
 
-:x: **Pure Css:**
+:x: **Pure Semantic CSS:**
 
 ```html
 <div class="chat-notification">
@@ -92,6 +94,8 @@ In the above example, we can visualize exactly how this file will appear in our 
 In the above example, their is no idication of what `.chat-notifications` will look like
 Here I have no idea what `.chat-notifcations` will look like, and making
 changes means I have to search the codebase for its definition. One can argue that this looks better when it comes to semantics but in terms of composition and reusability it's simply not.
+
+ It adds no real value to the structure of the page and gives no clue how it should look. This can lead to bugs as its purpose and scope are unclear.
 
 <!--
 
