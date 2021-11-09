@@ -54,7 +54,6 @@ As of recent, we adopted a utility-first CSS framework called [Tailwind](https:/
 As developers, we spend a significant amount of time thinking of class names rather than applying them. Tailwind remedies this process by offering us a whole suite of well-composed class names right out of the box. We don't even have to write a single line of semantic CSS; check it out!
 
 ```html
-
 <!-- ChatAppNotifcation.tsx -->
 
 <div
@@ -81,6 +80,8 @@ Thanks to Tailwind's intuitive naming conventions, we can visualize how this com
 :x: **Bad:**
 
 ```html
+<!-- ChatAppNotifcation.tsx -->
+
 <div class="chat-notification">
   <div class="chat-notification-logo-wrapper">
     <img
@@ -128,6 +129,8 @@ Thanks to Tailwind's intuitive naming conventions, we can visualize how this com
   }
 </style>
 ```
+
+As you can see, this is hard to read and we really don't know what the class names mean when looking at them right off the bat
 
 <br>
 
@@ -239,3 +242,50 @@ CSS file structure:
   ```
 
     <br>
+
+## React and Tailwind Gotacha's
+
+When appending utility class names - use the package `classnames`.
+
+## DO
+
+```js
+import React from "react";
+import cx from "classnames";
+
+const FullWidthVideo = ({ isVideoFullWidth }) => {
+  return (
+    <div
+      className={cx(
+        "InlineVideo relative w-1/2 overflow-hidden flex flex-col",
+        {
+          "w-full": isVideoFullWidth === true,
+        }
+      )}
+    >
+      ...
+    </div>
+  );
+};
+
+export default FullWidthVideo;
+```
+
+## Dont!
+
+```js
+import React from "react";
+import cx from "classnames";
+
+const FullWidthVideo = ({ isVideoFullWidth }) => {
+  return (
+    <div
+      className={`InlineVideo relative w-1/2 overflow-hidden flex flex-col ${
+        isVideoFullWidth ? "w-full" : null
+      }`}
+    >
+      ...
+    </div>
+  );
+};
+```
