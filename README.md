@@ -19,7 +19,7 @@ To demonstrate the advantages of using Tailwind, lets compare the two approaches
 
 :nail_care: **The Tailwind Way**
 
-As developers, we spend a great amount of time thinking of classnames than actually applying them to our markup. Tailwind remedies this cognitive load by offering an abdunance of intutive class names that alows us to easily build components with just a handeful of utility classes.
+As developers, we spend a great amount of time thinking of classnames rather than actually applying them to our markup. Tailwind remedies this cognitive load by offering an abdunance of intutive class names that allow us to easily build components with just a handeful of utility classes.
 <br>
 
 ```html
@@ -36,9 +36,7 @@ As developers, we spend a great amount of time thinking of classnames than actua
 </div>
 ```
 
-The coding example above de
-
-From this example, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add an atribute, all we have to do is append or remove a class. This approach allows us to implement a completely custom component design without having to rely on writting verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`.
+When reading our code example above, we can visualize exactly how this file will appear in our HTML. If we also want to remove or add an atribute, all we have to do is append or remove a class. This approach allows us to implement a completely custom component design without having to rely on writing verbose and non-composable class names like : `chat-notication` and `chat-notification-logo-wrapper`.
 
 <!--
 <br>
