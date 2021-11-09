@@ -52,11 +52,7 @@ changes means I have to search the codebase for its definition.
 As of recent, we adopted a utility-first CSS framework called [Tailwind](https://tailwindcss.com/) to help us compose and standardize our utility classes. Tailwind is bundled with many utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
 <br>
 
-<br>
-
 As developers, we spend a great amount of time thinking of class names rather than actually applying them. Tailwind remedies this cognitive load by offering an abdunance of intutive class names that allow us to easily build components with just a handeful of utility classes.
-
-<br>
 
 :white_check_mark: **Good**
 
@@ -80,7 +76,7 @@ Tailwinds intutive naming conventions help us visualize exactly how this compone
 
 <br>
 
-:x:  **Bad**
+:x:  **Bad:**
 
 ```html
 <div class="chat-notification">
