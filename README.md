@@ -90,7 +90,6 @@ Tailwinds intutive naming conventions help us visualize exactly how this compone
     />
   </div>
   <div class="chat-notification-content">
-
     <h4 class="chat-notification-title">Sanctuary Chat App</h4>
     <p class="chat-notification-message">You have a new message!</p>
   </div>
@@ -130,8 +129,60 @@ Tailwinds intutive naming conventions help us visualize exactly how this compone
 </style>
 ```
 
-<!--
-Resources
-https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
-https://levelup.gitconnected.com/im-finally-giving-functional-css-a-chance-a9ab284dde12 --> -->
-<!-- https://medium.com/geekculture/css-approaches-for-2021-semantic-and-non-semantic-styling-for-the-current-state-of-web-development-1581916ca1c0 -->
+<br>
+
+## CSS file structure and extending tailwind
+
+Even though we love tailwind - there are many ocssaions where we still need to write CSS and SCSS to bring life to our UI :)
+
+Use `components`, `atoms`, `blocks`, and `elements` folders in your
+CSS file structure:
+
+```
+-- dirroot
+    |-- src
+        |-- styles
+            |-- blocks
+              |-- index.sccs
+              |-- FullText.scss
+              |-- Hero.scss
+              ...
+            |-- atoms
+              |-- index.sccs
+              |-- Button.scss
+              |-- Link.scss
+             ....
+            |-- components
+              |-- index.sccs
+              |-- Card.scss
+              |-- Nav.scss
+              ...
+            |-- elements
+            index.scss
+              |-- Icon.scss
+              |-- LinkDescriptions.scss
+          |-- vars.scss
+          |-- font.scss
+          |-- global.scss
+          |-- _colors.scss
+    |-- package.json
+    |-- yarn.lock
+    |-- tailwind.config.js
+
+```
+
+- `/components`
+  Should you need specific styling for a Component that doesn't make sense to use `tailwind` or `inline styles`, you can use a component level SCSS file. Components are more complex and usually compose multiple atoms and elements together
+
+- `/atoms`
+  Sometimes we confuse `atoms` with `blocks` or `components`. To avoid making this mistake, try to categorize atoms as entities that have a single side effect to them. Think of them as small resuable pieces: Buttons, Links and Images.
+
+- `/elements`
+  To put simply an element is a single part of a larger group: `Icons` , `InlineLinks`
+
+- `blocks/`
+  Consider blocks to be the subcategoriy 
+
+
+- `vars.scss`
+This file is where we store global variables
