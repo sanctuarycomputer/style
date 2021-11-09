@@ -188,10 +188,10 @@ CSS file structure:
   Should you need specific styling for a Component that doesn't make sense to use *tailwind *or _inline styles_, you can use a component level SCSS file. Components are more complex and usually compose multiple atoms and elements together
 
 - `/atoms`
-  Sometimes we confuse `atoms` with `blocks` or `components`. To avoid making this mistake, try to categorize atoms as entities that have a single side effect to them. Think of them as small resuable pieces: Buttons, Links and Images.
+  Sometimes we confuse atoms with `blocks` and `components`. To avoid making this mistake, try to categorize atoms as entities that have a single side effect to them. Think of them as small resuable pieces: Buttons, Links and Images.
 
 - `/elements`
-  To put simply an element is a single part of a larger group: `Icons` , `InlineLinks`
+  To put simply an element is a single part of a larger group: *Icons*  and  *InlineLinks*
 
 - `/blocks`
   Blocks are related to content data coming from a CMS or a data source. There functionallity is tied data and are not as composable as components
