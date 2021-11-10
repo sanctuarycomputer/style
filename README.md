@@ -161,13 +161,13 @@ This approach enables us to implement a completely custom component design witho
 </style>
 ```
 
-At first glance, I have no idea what `.chat-notification `will look like, and if we decide to make changes to this component we have to search the codebase for its location and related definitions. If we were to work on a bigger maintained CSS system we still would have to learn and repoduce the already written CSS to onboarded successfully to the application
+At first glance, I have no idea what `.chat-notification `will look like, and if we decide to make changes to this component we have to search the codebase for its location and related definitions. Zigzagging between a HTML/JSX and a CSS file to make sweeping changes through a codebase is hard, and when our codebase starts to scale - we will have to sett a large amount of time trying to learn and reproduce these styles. This is where productivity starts to take a hit . 
 
 <br>
 
 ## CSS file structure and extending tailwind
 
-Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting
+Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting.  There is no such thing as a silver bullet when it comes to CSS frameworks.
 
 Use `components`, `atoms`, `blocks`, and `elements` folders in your
 CSS file structure:
