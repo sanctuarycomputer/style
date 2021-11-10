@@ -285,7 +285,7 @@ Real life examples that utilize this folder and file structure at sanctuary.
 
 ## React and Tailwind - Gotchas!
 
-Bellow , we have included some common mistakes that developers make when using react and tailwind.
+Bellow, we have included some common anti-patterns that we see when new developers are in the process of being onboarded to a react and tailwind project.
 
 <br>
 
