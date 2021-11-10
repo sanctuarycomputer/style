@@ -165,7 +165,7 @@ At first glance, I have no idea what `.chat-notification `will look like, and if
 
 ## CSS file structure and extending tailwind
 
-Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting. We only create a CSS class for components that have styling needs that aren't possible by inlining tailwind classe. Just be sure to only use a semantic class when you’re styling it from a CSS file.
+Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting. We only create a CSS class for components that have styling needs that aren't possible by inlining tailwind classes. Just be sure to only use a semantic class when you’re styling it from a CSS file.
 
 Use `components`, `atoms`, `blocks`, and `elements` folders in your
 CSS file structure:
@@ -216,7 +216,7 @@ CSS file structure:
   @import "./styles";
   ```
 
-- `tailwind.config.j`
+- `tailwind.config.js`
   After setting up tailwind CSS for your application - you should see a file in the root directory called **tailwind.config.js**. By default, Tailwind will look for an optional tailwind.config.js file at the root of your project where you can define any customizations.
 
   ```
