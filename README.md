@@ -106,7 +106,7 @@ Tailwind's intuitive naming conventions allow us to visualize how this component
 
 ![alt text](chat1.png "Title")
 
-This approach enables us to implement a completely custom component design without writing verbose and non-reusable class names. Let's try writing the exact Chat app Notification component using semantic CSS
+This approach enables us to implement a completely custom component design without writing verbose and non-reusable class names. Let's try writing the exact `ChatAppNotifcation` component using semantic CSS
 
 ```html
 <!-- ChatAppNotifcation.tsx -->
@@ -165,7 +165,7 @@ At first glance, I have no idea what `.chat-notification `will look like, and if
 
 ## CSS file structure and extending tailwind
 
-Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting. We only create a CSS class for components that have styling needs that aren't possible by inlining tailwind classes in the DOM.
+Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting. We only create a CSS class for components that have styling needs that aren't possible by inlining tailwind classe. Just be sure to only use a semantic class when you’re styling it from a CSS file.
 
 Use `components`, `atoms`, `blocks`, and `elements` folders in your
 CSS file structure:
