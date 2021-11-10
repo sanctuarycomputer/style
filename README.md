@@ -161,13 +161,13 @@ This approach enables us to implement a completely custom component design witho
 </style>
 ```
 
-At first glance, I have no idea what `.chat-notification `will look like, and if we decide to make changes to this component, we have to search the codebase for its location and related definitions. In addition, zigzagging between an HTML/JSX and a CSS file to make sweeping changes through a codebase is hard, and when our codebase starts to scale, we will have to spend a significant amount of time trying to learn to reproduce these styles. 
+At first glance, I have no idea what `.chat-notification `will look like, and if we decide to make changes to this component, we have to search the codebase for its location and related definitions. In addition, zigzagging between an HTML/JSX and a CSS file to make sweeping changes through a codebase is hard, and when our codebase starts to scale, we will have to spend a significant amount of time trying to learn to reproduce these styles.
 
 <br>
 
 ## CSS file structure and extending tailwind
 
-Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting.  There is no such thing as a silver bullet when it comes to CSS frameworks.
+Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting. There is no such thing as a silver bullet when it comes to CSS frameworks.
 
 Use `components`, `atoms`, `blocks`, and `elements` folders in your
 CSS file structure:
@@ -283,8 +283,7 @@ When appending utility class names - use the package `classnames`.
 ```js
 import React from "react";
 
-
-const Banner = ({ active, children,active,isError }) => (
+const Banner = ({ active, children, active, isError }) => (
   <div
     className={`banner large ${!active ? "hidden" : ""} ${
       isError ? "bg-red" : ""
@@ -295,8 +294,6 @@ const Banner = ({ active, children,active,isError }) => (
 );
 
 export default Banner;
-
-export default FullWidthVideo;
 ```
 
 ## DO!
