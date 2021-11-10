@@ -161,7 +161,7 @@ This approach enables us to implement a completely custom component design witho
 </style>
 ```
 
-At first glance, I have no idea what `.chat-notification `will look ike, and if we decide to make changes to this component we have to search the codebase for its location and all of the definitions attached to it. If we were to work on a bigger maintained CSS system it would require more time to learn and reporoduce than if we just used used utility classess
+At first glance, I have no idea what `.chat-notification `will look like, and if we decide to make changes to this component we have to search the codebase for its location and related definitions. If we were to work on a bigger maintained CSS system we still would have to learn and repoduce the already written CSS to onboarded successfully to the application
 
 <br>
 
