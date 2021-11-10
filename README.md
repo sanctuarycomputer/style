@@ -285,9 +285,13 @@ Real life examples that utilize this folder and file structure at sanctuary.
 
 ## React and Tailwind
 
-### Conditional classnames
+<br>
 
-When applying conditional classnames to our components, stray away from using ternary and instead use the [classnames](https://github.com/JedWatson/classnames) package.
+### **Conditional classNames**
+
+<br>
+
+When applying conditional classnames inline to our components, stray away from using ternary operators and instead use the [classnames](https://github.com/JedWatson/classnames) package.
 
 Do:
 
@@ -327,8 +331,73 @@ const Banner = ({ active, children, active, isError }) => (
 export default Banner;
 ```
 
-more here ....
+<br>
 
-## React Native and Tailwind
+### **Avoid inline object styles**
 
-more here ....
+<br>
+
+When styling components, do not rely on inline style objects because you couldn't find a convenient utility class in your tailwind configuration. Developers also tend to do this when they feel like writing a CSS file for a single line of code is a waste of time.
+
+Dont:
+
+```js
+const ProfileCard = ({ name, profileDescription, imageSrc }) => (
+  <div
+    style={{ backgroundColor: "#F2EBCA", maxWidth: "41.666667vw" }}
+    className={"flex flew-col p-6 ml-auto mr-auto "}
+  >
+    <div style={{ marginTop: "3.75rem", marginBottom: "3.75rem" }}>
+      <h6 className="text-xl font-medium text-black">{name}</h6>
+      <p class="text-gray-500">{profileDescription}</p>
+    </div>
+    <img className="w-full" src={imageSrc} />
+  </div>
+);
+```
+
+Instead, extend your `tailwind.config.js` to include the base style you want so it can be shared across your codebase and be reused later.
+
+_do_
+
+```js
+module.exports = {
+  theme: {
+    colors: {
+        beige: '#f3f2ed',
+      ....,
+
+    },
+    extend: {
+      spacing: {
+        15: "3.75rem",
+        '5/12-screen': '41.666667vw',
+        ...,
+      },
+    },
+  },
+....
+};
+```
+
+<br>
+
+Then remove inline styles and add new utillity classes :thumbs-up:
+
+```js
+const ProfileCard = ({ name, profileDescription, imageSrc }) => (
+  <div
+    className={"bg-beige flex flew-col p-6 ml-auto mr-auto max-w-5/12-screen"}
+  >
+    <div className="my-15">
+      <h6 className="text-xl font-medium text-black">{name}</h6>
+      <p class="text-gray-500">{profileDescription}</p>
+    </div>
+    <img className="w-full" src={imageSrc} />
+  </div>
+);
+```
+
+<br>
+
+Occassionaly we are forced to use react inlineStyles. For example, when we have to change a height of a div based on a window dom parameter or an event listener. When you run into this scenerio, it's ok to get create with inline styles :) 
