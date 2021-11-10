@@ -285,7 +285,7 @@ In this section, we have included common anti-patterns that exist when a new dev
 
 <br>
 
-### **Conditional class names**
+### **1. Conditional class names**
 
 <br>
 
@@ -331,7 +331,7 @@ export default Banner;
 
 <br>
 
-### **Avoid inline object styles**
+### **2. Avoid inline object styles**
 
 <br>
 
