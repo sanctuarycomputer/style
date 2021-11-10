@@ -98,9 +98,7 @@ _Code:_
 </div>
 ```
 
-### Result:
-
-<br>
+_Result:_
 
 ![alt text](chat1.png "Title")
 
