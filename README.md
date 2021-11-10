@@ -161,13 +161,13 @@ This approach enables us to implement a completely custom component design witho
 </style>
 ```
 
-At first glance, I have no idea what .chat-notification will look ike, and if we decide to make changes to this component we have to search the codebase for its location and all of the definitions attached to it. If we were to work on a bigger maintained CSS system it would require more time to learn and reporoduce than if we just used used utility classess
+At first glance, I have no idea what `.chat-notification `will look ike, and if we decide to make changes to this component we have to search the codebase for its location and all of the definitions attached to it. If we were to work on a bigger maintained CSS system it would require more time to learn and reporoduce than if we just used used utility classess
 
 <br>
 
 ## CSS file structure and extending tailwind
 
-Even though we love tailwind - there are many occassions where we still need to write css where we feel that the Tailwind isn't good enough to acheive the task
+Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting
 
 Use `components`, `atoms`, `blocks`, and `elements` folders in your
 CSS file structure:
@@ -324,4 +324,3 @@ more here ....
 ## React Native and Tailwind
 
 more here ....
-
