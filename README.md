@@ -215,7 +215,7 @@ CSS file structure in tandem with your desired Tailwind configuration:
 - `tailwind.config.js`
   After setting up tailwind CSS for your application - you should see a file in the root directory called **tailwind.config.js**. By default, Tailwind will look for an optional tailwind.config.js file at the root of your project where you can define any customizations.
 
-  ```
+  ```js
     const colors = require('tailwindcss/colors')
     module.exports = {
       theme: {
