@@ -283,7 +283,9 @@ Real life examples that utilize this folder and file structure at sanctuary.
 
 ---
 
-## React and Tailwind
+## React and Tailwind - Gotchas!
+
+Bellow , we have included some common mistakes that developers make when using react and tailwind.
 
 <br>
 
@@ -359,7 +361,6 @@ const ProfileCard = ({ name, profileDescription, imageSrc }) => (
 
 Instead, extend your `tailwind.config.js` to include the base styles you want! Then we can re-use these bases styles in tailwind for later purposes
 
-
 _do_
 
 ```js
@@ -402,4 +403,4 @@ const ProfileCard = ({ name, profileDescription, imageSrc }) => (
 
 <br>
 
-Occassionaly we are forced to use react inlineStyles. For example, when we have to change a height of a div based on a window dom parameter or an event listener. When you run into this scenerio, it's ok to get create with inline styles :) 
+Occassionaly we are forced to use react inlineStyles. For example, when we have to change a height of a div based on a window dom parameter or an event listener. When you run into this scenerio, it's ok to get create with inline styles :)
