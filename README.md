@@ -165,7 +165,7 @@ At first glance, I have no idea what `.chat-notification `will look like, and if
 
 ## CSS file structure and extending tailwind
 
-Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting. There is no such thing as a silver bullet when it comes to CSS frameworks.
+Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting. We only create a CSS class for components that have styling needs that aren't possible by inlining tailwind classes in the DOM.
 
 Use `components`, `atoms`, `blocks`, and `elements` folders in your
 CSS file structure:
@@ -272,12 +272,20 @@ CSS file structure:
 
     <br>
 
-## React and Tailwind Gotacha's
+## React and Tailwind 
 
-Appending class names
+
+At sanctuary we prefer stable technologies over new shiny ones.
+
+
+
 When appending utility class names - use the package `classnames`.
 
-## Dont
+
+
+### Conditional classnames
+
+ Dont
 
 ```js
 import React from "react";
