@@ -168,7 +168,7 @@ At first glance, I have no idea what `.chat-notification `will look like, and if
 Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting. We only create a CSS class for components that have styling needs that aren't possible by inlining tailwind classes. Just be sure to only use a semantic class when you’re styling it from a CSS file.
 
 Use `components`, `atoms`, `blocks`, and `elements` folders in your
-CSS file structure in tandem with our desired Tailwind configuration:
+CSS file structure in tandem with your desired Tailwind configuration:
 
 ```
 -- dirroot
@@ -242,13 +242,13 @@ CSS file structure in tandem with our desired Tailwind configuration:
   Should you need specific styling for a Component that doesn't make sense to use *tailwind *or _inline styles_, you can use a component level SCSS file. Components are more complex and usually compose multiple atoms and elements together
 
 - `/atoms`
-  Sometimes we confuse atoms with `blocks` and `components`. To avoid making this mistake, try to categorize atoms as entities that have a single side effect to them. Think of them as small resuable pieces: Buttons, Links and Images.
+  Sometimes we confuse atoms with `blocks` and `components`. To avoid making this mistake, try to categorize atoms as entities that have a single side effect to them. Think of them as small resuable pieces like : _Buttons_, _Links_ and _Images_.
 
 - `/elements`
   To put simply an element is a single part of a larger group: _Icons_ and _InlineLinks_
 
 - `/blocks`
-  Blocks are related to content data coming from a CMS or a data source. There functionallity is tied data and are not as composable as components
+  Blocks are related to content data coming from a CMS or a data source. There functionallity is tied to data.
 
 - `fonts.scss`
   This is where we import and categorize our various font families
@@ -274,7 +274,7 @@ CSS file structure in tandem with our desired Tailwind configuration:
 
     <br>
 
-Real life examples that utilize this folder and file structure at sanctuary.
+Real life examples that utilize this folder and file structure at Sanctuary.
 
 - [Rootine - Next.JS](https://github.com/sanctuarycomputer/rootine)
 - [Index Space - Next.JS](https://github.com/sanctuarycomputer/index-space)
@@ -285,11 +285,12 @@ Real life examples that utilize this folder and file structure at sanctuary.
 
 ## React and Tailwind - Gotchas!
 
-Bellow, we have included some common anti-patterns that we see when new developers are in the process of being onboarded to a react and tailwind project.
+In this section, we have included common anti-patterns that exist when a new developer is being onboarded to a tailwind and react project.
+
 
 <br>
 
-### **Conditional classNames**
+### **Conditional class names**
 
 <br>
 
