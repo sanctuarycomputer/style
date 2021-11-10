@@ -400,3 +400,23 @@ const ProfileCard = ({ name, profileDescription, imageSrc }) => (
 <br>
 
 Occassionaly we are forced to use react inlineStyles. For example, when we have to change a height of a div based on a window dom parameter or an event listener. When you run into this scenerio, it's ok to get creative with inline styles :)
+
+### **2. Do not compose tailwind clasess in object styles**
+
+<br>
+
+_Dont:_:thumbsdown:
+
+```css
+.AuthPanelButtonsWrapper {
+  @apply absolute bottom-0 left-0 px-2.5 py-5 md:p-5 w-full grid grid-cols-2 gap-x-3 md:gap-x-14;
+}
+```
+
+Don't do this, as it unnecessarily obscures CSS, just inline the classes in the DOM. It makes visualizing the component from markup much easier
+
+---
+
+## React Native and Tailwind
+
+Comming soon....
