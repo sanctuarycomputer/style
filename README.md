@@ -401,7 +401,7 @@ const ProfileCard = ({ name, profileDescription, imageSrc }) => (
 
 Occassionaly we are forced to use react inlineStyles. For example, when we have to change a height of a div based on a window dom parameter or an event listener. When you run into this scenerio, it's ok to get creative with inline styles :)
 
-### **2. Do not compose tailwind clasess in object styles**
+### **3. Do not compose tailwind clasess in object styles**
 
 <br>
 
