@@ -55,7 +55,7 @@ As developers, we spend a significant amount of time thinking of class names rat
 
 <br>
 
-### Code:
+_Code:_
 
 ```html
 <!-- ChatAppNotifcation.tsx -->
@@ -83,7 +83,7 @@ Tailwind's intuitive naming conventions allow us to visualize how this component
 
 <br>
 
-### Code:
+_Code:_
 
 <br>
 
