@@ -4,7 +4,7 @@
 
 ## Introduction
 
-At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that radiate purpose and intent can be challenging. In addition, the process of coming up with new class names for components can lead to naming conflicts, dead CSS, and overall a bloated codebase. So, instead of writing monolithic chunks of CSS, we prefer to write small, unique, immutable utility classes that can be used to form larger components. This also helps our team build robust design systems with our code. It's the Functional Programmer's approach to styling!
+At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that radiate purpose and intent can be challenging. In addition, the process of coming up with new class names for components can lead to naming conflicts, dead CSS, and overall a bloated codebase. So, instead of writing monolithic chunks of CSS, we prefer to write small, unique, immutable utility classes that can be used to form larger components. This approach of writing CSS also helps our team build robust design systems with our code. It's the Functional Programmer's approach to styling!
 
 ---
 
@@ -49,9 +49,9 @@ changes means I have to search the codebase for its definition.
 
 ## Composability with Tailwind
 
-As of recent, we adopted a utility-first CSS framework called [Tailwind](https://tailwindcss.com/) to help us compose and standardize our utility classes. Tailwind is bundled with many utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
+As of recent, we adopted the utility-first CSS framework [Tailwind](https://tailwindcss.com/) to help us compose and standardize our utility classes. Tailwind comes bundled with a variety of base utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
 
-As developers, we spend a significant amount of time thinking of class names rather than applying them. Tailwind remedies this process by offering us a whole suite of well-composed class names right out of the box. We don't even have to write a single line of semantic CSS; check it out!
+As developers, we spend a significant amount of time thinking of class names rather than applying them. Unfortunately, we overcomplicate this process by creating extensive naming conventions that we use seldomly or disregard completely. Tailwind remedies this process by offering us a whole suite of well-composed utlity class names right out of the box. We don't even have to write a single line of CSS; check it out!
 
 ```html
 <!-- ChatAppNotifcation.tsx -->
@@ -75,7 +75,11 @@ As developers, we spend a significant amount of time thinking of class names rat
 
 <br>
 
-Thanks to Tailwind's intuitive naming conventions, we can visualize how this component will appear in our HTML. If we also want to remove or add an attribute, we just have to append or remove a class name. This approach enables us to implement a completely custom component design without writing verbose and non-reusable class names. Let's try writing the exact Chat app Notification component using semantic CSS
+Because of Tailwind's intuitive naming conventions, we can visualize how this component will appear in our HTML. If we also want to remove or add an attribute, we just have to append or remove a class name. Since this component is written in tailwind it also gives our styes a certain degree
+
+we can also transport this component to another codebase and it should work right out of the box if we didn't extend are tailwind classess.
+
+These small building blocks (utility classes) allow us to create composable components without having to write long opinionted css classes.
 
 :x: **Bad:**
 
@@ -130,7 +134,7 @@ Thanks to Tailwind's intuitive naming conventions, we can visualize how this com
 </style>
 ```
 
-As you can see, this is hard to read and we really don't know what the class names mean when looking at them right off the bat. It would also take a long time to figure out if you could reuse these styles in the future
+At first glance, I have no idea what .chat-notification will look ike, and if we decide to make changes to this component we have to search the codebase for its locations and all of the definitions attached to it. If we were to work on a bigger maintained CSS system it would require more time to learn and reporoduce than if we used utility classess
 
 <br>
 
@@ -188,7 +192,7 @@ CSS file structure:
   ```
 
 - `tailwind.config.j`
-  After setting up tailwind CSS for your application - you should see a file in the root directory called tailwind.config.js. By default, Tailwind will look for an optional tailwind.config.js file at the root of your project where you can define any customizations.
+  After setting up tailwind CSS for your application - you should see a file in the root directory called **tailwind.config.js**. By default, Tailwind will look for an optional tailwind.config.js file at the root of your project where you can define any customizations.
 
   ```
     const colors = require('tailwindcss/colors')
@@ -290,12 +294,8 @@ const VideoCompoent = ({ isVideoFullWidth }) => {
 };
 ```
 
-
-more here .... 
-
-
+more here ....
 
 ## React Native and Tailwind
 
-
-more here .... 
+more here ....
