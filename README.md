@@ -4,7 +4,7 @@
 
 ## Introduction
 
-At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that radiate purpose and intent can be challenging. In addition, the process of coming up with new class names for components can lead to naming conflicts, dead CSS, and overall a bloated codebase. So, instead of writing monolithic chunks of CSS, we prefer to write small, unique, immutable utility classes that can be used to form larger components. This approach of writing CSS also helps our team build robust design systems with our code. It's the Functional Programmer's approach to styling!
+At Sanctuary Computer, we are constantly striving to find new ways to write scalable and maintainable CSS. Unfortunately, writing semantic class names that display purpose and intent can be challenging. In addition, creating new class names for components can lead to naming conflicts and dead CSS, which results in a bloated codebase. So, instead of writing monolithic chunks of CSS, we prefer to write small, unique, immutable utility classes that we can use to form more significant components. This approach to writing CSS sets the foundation for our team to build robust design systems. It's the Functional Programmer's approach to styling!
 
 ---
 
