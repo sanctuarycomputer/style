@@ -285,10 +285,6 @@ Real life examples that utilize this folder and file structure at sanctuary.
 
 ## React and Tailwind
 
-At sanctuary we prefer stable technologies over new shiny ones.
-
-When appending utility class names - use the package [classnames](https://github.com/JedWatson/classnames).
-
 ### Conditional classnames
 
 When applying conditional classnames to our components, stray away from using ternary and instead use the [classnames](https://github.com/JedWatson/classnames) package.
