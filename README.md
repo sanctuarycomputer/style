@@ -168,7 +168,7 @@ At first glance, I have no idea what `.chat-notification `will look like, and if
 Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting. We only create a CSS class for components that have styling needs that aren't possible by inlining tailwind classe. Just be sure to only use a semantic class when you’re styling it from a CSS file.
 
 Use `components`, `atoms`, `blocks`, and `elements` folders in your
-CSS file structure:
+CSS file structure in tandem with our desired Tailwind configuration:
 
 ```
 -- dirroot
@@ -257,6 +257,8 @@ CSS file structure:
   This file is where we store global variables to access them in any given scope of our application. We usually put height properties in here. In the past we would include color variables but we now handle that in our taildwind configuration:
   <br>
 
+- `global.scss`
+
   ```css
   <!-- vars.scss -->
 
@@ -272,38 +274,26 @@ CSS file structure:
 
     <br>
 
-## React and Tailwind 
+Real life examples that utilize this folder and file structure at sanctuary.
 
+- [Rootine - Next.JS](https://github.com/sanctuarycomputer/rootine)
+- [Index Space - Next.JS](https://github.com/sanctuarycomputer/index-space)
+
+<br>
+
+---
+
+## React and Tailwind
 
 At sanctuary we prefer stable technologies over new shiny ones.
 
-
-
-When appending utility class names - use the package `classnames`.
-
-
+When appending utility class names - use the package [classnames](https://github.com/JedWatson/classnames).
 
 ### Conditional classnames
 
- Dont
+When applying conditional classnames to our components, stray away from using ternary and instead use the [classnames](https://github.com/JedWatson/classnames) package.
 
-```js
-import React from "react";
-
-const Banner = ({ active, children, active, isError }) => (
-  <div
-    className={`banner large ${!active ? "hidden" : ""} ${
-      isError ? "bg-red" : ""
-    }`}
-  >
-    {children}
-  </div>
-);
-
-export default Banner;
-```
-
-## DO!
+Do:
 
 ```js
 import React from "react";
@@ -315,6 +305,24 @@ const Banner = ({ active, children, isError }) => (
       hidden: !active,
       "bg-red": isError,
     })}
+  >
+    {children}
+  </div>
+);
+
+export default Banner;
+```
+
+Dont
+
+```js
+import React from "react";
+
+const Banner = ({ active, children, active, isError }) => (
+  <div
+    className={`bg-primary-blue flex flew-row ${!active ? "hidden" : ""} ${
+      isError ? "bg-red" : ""
+    }`}
   >
     {children}
   </div>
