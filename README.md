@@ -18,7 +18,7 @@ than complex, hard-to-find identities.
 
 Optimize for composability over semantics.
 
-**Good:**
+**Good:** :thumbsup:
 
 ```html
 <div
@@ -32,7 +32,7 @@ In this example, I can visualize exactly how the file will look purely from
 reading the HTML, and I can remove an add an attribute simply by removing a
 Class.
 
-**Bad:**
+**Bad:** :thumbsdown:
 
 ```html
 <div class="hello-world-wrapper">
@@ -73,9 +73,7 @@ As developers, we spend a significant amount of time thinking of class names rat
 </div>
 ```
 
-**Result:**
-
-<br>
+_Result:_
 
 ![alt text](chat.png "Title")
 
@@ -287,7 +285,6 @@ Real life examples that utilize this folder and file structure at Sanctuary.
 
 In this section, we have included common anti-patterns that exist when a new developer is being onboarded to a tailwind and react project.
 
-
 <br>
 
 ### **Conditional class names**
@@ -296,7 +293,7 @@ In this section, we have included common anti-patterns that exist when a new dev
 
 When applying conditional classnames inline to our components, stray away from using ternary operators and instead use the [classnames](https://github.com/JedWatson/classnames) package.
 
-Do:
+Do::thumbsup:
 
 ```js
 import React from "react";
@@ -316,7 +313,7 @@ const Banner = ({ active, children, isError }) => (
 export default Banner;
 ```
 
-Dont
+Dont: :thumbsdown:
 
 ```js
 import React from "react";
@@ -362,7 +359,7 @@ const ProfileCard = ({ name, profileDescription, imageSrc }) => (
 
 Instead, extend your `tailwind.config.js` to include the base styles you want! Then we can re-use these bases styles in tailwind for later purposes
 
-_do_
+_do_: :thumbsup:
 
 ```js
 module.exports = {
