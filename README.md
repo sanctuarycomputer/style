@@ -51,13 +51,11 @@ changes means I have to search the codebase for its definition.
 
 We recently adopted the utility-first CSS framework Tailwind to help us compose and standardize our utility classes. Tailwind bundles a variety of base utility classes like _flex_, _mt-4_, _overflow-hidden_, _items-center_ and _bg-white_. We can use these utility classes to build any design directly in our markup.
 
-As developers, we spend a significant amount of time thinking of class names rather than applying them. Unfortunately, we overcomplicate this process by creating extensive naming conventions that we use seldomly or disregard completely. Tailwind remedies this process by offering us a whole suite of well-composed utility class names that work right out of the box. This means we don't have to write a single line of css. Check it out!
+As developers, we spend a significant amount of time thinking of class names rather than applying them. Unfortunately, we overcomplicate this process by creating extensive naming conventions that we use seldomly or disregard completely. Tailwind remedies this process by offering us a whole suite of well-composed utility class names that work right out of the box. Check it out!
 
 <br>
 
 ### Code:
-
-<br>
 
 ```html
 <!-- ChatAppNotifcation.tsx -->
@@ -276,6 +274,7 @@ CSS file structure:
 
 ## React and Tailwind Gotacha's
 
+Appending class names
 When appending utility class names - use the package `classnames`.
 
 ## Dont
