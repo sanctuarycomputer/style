@@ -49,9 +49,15 @@ changes means I have to search the codebase for its definition.
 
 ## Composability with Tailwind
 
-As of recent, we adopted the utility-first CSS framework [Tailwind](https://tailwindcss.com/) to help us compose and standardize our utility classes. Tailwind comes bundled with a variety of base utility classes like: `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. These utility classes can be used to build any design directly in our mark up.
+We recently adopted the utility-first CSS framework Tailwind to help us compose and standardize our utility classes. Tailwind bundles a variety of base utility classes like _flex_, _mt-4_, _overflow-hidden_, _items-center_ and _bg-white_. We can use these utility classes to build any design directly in our markup.
 
-As developers, we spend a significant amount of time thinking of class names rather than applying them. Unfortunately, we overcomplicate this process by creating extensive naming conventions that we use seldomly or disregard completely. Tailwind remedies this process by offering us a whole suite of well-composed utlity class names right out of the box. We don't even have to write a single line of CSS; check it out!
+As developers, we spend a significant amount of time thinking of class names rather than applying them. Unfortunately, we overcomplicate this process by creating extensive naming conventions that we use seldomly or disregard completely. Tailwind remedies this process by offering us a whole suite of well-composed utility class names that work right out of the box. This means we don't have to write a single line of css. Check it out!
+
+<br>
+
+### Code:
+
+<br>
 
 ```html
 <!-- ChatAppNotifcation.tsx -->
@@ -60,7 +66,7 @@ As developers, we spend a significant amount of time thinking of class names rat
   class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
 >
   <div class="flex-shrink-0">
-    <img class="h-12 w-12" src="/asset/sanc.png" alt="ChitChat Logo" />
+    <img class="h-12 w-12" src="/asset/sanc.png" alt="Sanctuary Logo" />
   </div>
   <div>
     <div class="text-xl font-medium text-black">Sanctuary Chat Ap</div>
@@ -71,17 +77,38 @@ As developers, we spend a significant amount of time thinking of class names rat
 
 **Result:**
 
+<br>
+
 ![alt text](chat.png "Title")
 
 <br>
 
-Because of Tailwind's intuitive naming conventions, we can visualize how this component will appear in our HTML. If we also want to remove or add an attribute, we just have to append or remove a class name. Since this component is written in tailwind it also gives our styes a certain degree
+Tailwind's intuitive naming conventions allow us to visualize how this component will appear in our HTML. To remove or add an attribute, we just have to append or remove a class name. For example, if we wanted to change the background colour and give the sanctuary logo a border radius, we would append the following class names: `bg-darkest-grey` and `rounded-full` to our previously built ChatAppNotifcation component.
 
-we can also transport this component to another codebase and it should work right out of the box if we didn't extend are tailwind classess.
+<br>
 
-These small building blocks (utility classes) allow us to create composable components without having to write long opinionted css classes.
+### Code:
 
-:x: **Bad:**
+<br>
+
+```html
+<div
+  class="p-6 max-w-sm mx-auto bg-darkest-grey rounded-xl shadow-md flex items-center space-x-4"
+>
+  <div class="flex-shrink-0 rounded-full">
+    <img class="h-12 w-12" src="/asset/sanc.png" alt="ChitChat Logo" />
+    .....
+  </div>
+</div>
+```
+
+### Result:
+
+<br>
+
+![alt text](chat1.png "Title")
+
+This approach enables us to implement a completely custom component design without writing verbose and non-reusable class names. Let's try writing the exact Chat app Notification component using semantic CSS
 
 ```html
 <!-- ChatAppNotifcation.tsx -->
@@ -134,13 +161,13 @@ These small building blocks (utility classes) allow us to create composable comp
 </style>
 ```
 
-At first glance, I have no idea what .chat-notification will look ike, and if we decide to make changes to this component we have to search the codebase for its locations and all of the definitions attached to it. If we were to work on a bigger maintained CSS system it would require more time to learn and reporoduce than if we used utility classess
+At first glance, I have no idea what .chat-notification will look ike, and if we decide to make changes to this component we have to search the codebase for its location and all of the definitions attached to it. If we were to work on a bigger maintained CSS system it would require more time to learn and reporoduce than if we just used used utility classess
 
 <br>
 
 ## CSS file structure and extending tailwind
 
-Even though we love tailwind - there are many ocssaions where we still need to write CSS and SCSS to bring life to our UI :)
+Even though we love tailwind - there are many occassions where we still need to write css where we feel that the Tailwind isn't good enough to acheive the task
 
 Use `components`, `atoms`, `blocks`, and `elements` folders in your
 CSS file structure:
@@ -251,47 +278,45 @@ CSS file structure:
 
 When appending utility class names - use the package `classnames`.
 
-## DO
+## Dont
 
 ```js
 import React from "react";
-import cx from "classnames";
 
-const VideoCompoent = ({ isVideoFullWidth }) => {
-  return (
-    <div
-      className={cx(
-        "InlineVideo relative w-1/2 overflow-hidden flex flex-col",
-        {
-          "w-full": isVideoFullWidth === true,
-        }
-      )}
-    >
-      ...
-    </div>
-  );
-};
+
+const Banner = ({ active, children,active,isError }) => (
+  <div
+    className={`banner large ${!active ? "hidden" : ""} ${
+      isError ? "bg-red" : ""
+    }`}
+  >
+    {children}
+  </div>
+);
+
+export default Banner;
 
 export default FullWidthVideo;
 ```
 
-## Dont!
+## DO!
 
 ```js
 import React from "react";
 import cx from "classnames";
 
-const VideoCompoent = ({ isVideoFullWidth }) => {
-  return (
-    <div
-      className={`InlineVideo relative w-1/2 overflow-hidden flex flex-col ${
-        isVideoFullWidth ? "w-full" : null
-      }`}
-    >
-      ...
-    </div>
-  );
-};
+const Banner = ({ active, children, isError }) => (
+  <div
+    className={cx("bg-primary-blue flex flew-row", {
+      hidden: !active,
+      "bg-red": isError,
+    })}
+  >
+    {children}
+  </div>
+);
+
+export default Banner;
 ```
 
 more here ....
@@ -299,3 +324,53 @@ more here ....
 ## React Native and Tailwind
 
 more here ....
+
+<div class="chat-notification">
+  <div class="chat-notification-logo-wrapper">
+    <img
+      class="chat-notification-logo"
+      src="https://cdn-images-1.medium.com/max/1200/1*hJvyTiMzGHKvhVJgh7T3kA.png"
+      alt="ChitChat Logo"
+    />
+  </div>
+  <div class="chat-notification-content">
+    <h4 class="chat-notification-title">Sanctuary Chat App</h4>
+    <p class="chat-notification-message">You have a new message!</p>
+  </div>
+</div>
+
+<style>
+  .chat-notification {
+    display: flex;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+background-color: #141414;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  .chat-notification-logo-wrapper {
+    border-radius:24px;
+    flex-shrink: 0;
+  }
+  .chat-notification-logo {
+        border-radius:24px;
+
+    height: 3rem;
+    width: 3rem;
+  }
+  .chat-notification-content {
+    margin-left: 1.5rem;
+    padding-top: 0.25rem;
+  }
+  .chat-notification-title {
+    color:#fff;
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+  .chat-notification-message {
+    color: #999999;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>
