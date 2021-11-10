@@ -340,6 +340,7 @@ export default Banner;
 When styling components, do not rely on inline style objects because you couldn't find a convenient utility class in your tailwind configuration. Developers also tend to do this when they feel like writing a CSS file for a single line of code is a waste of time.
 
 Dont:
+:thumbsdown:
 
 ```js
 const ProfileCard = ({ name, profileDescription, imageSrc }) => (
@@ -356,7 +357,8 @@ const ProfileCard = ({ name, profileDescription, imageSrc }) => (
 );
 ```
 
-Instead, extend your `tailwind.config.js` to include the base style you want so it can be shared across your codebase and be reused later.
+Instead, extend your `tailwind.config.js` to include the base styles you want! Then we can re-use these bases styles in tailwind for later purposes
+
 
 _do_
 
@@ -382,7 +384,7 @@ module.exports = {
 
 <br>
 
-Then remove inline styles and add new utillity classes :thumbs-up:
+Then remove inline styles and add new utillity classes :thumbsup:
 
 ```js
 const ProfileCard = ({ name, profileDescription, imageSrc }) => (
