@@ -1,4 +1,4 @@
-# Sanctuary Computer Code Styleguide
+# Sanctuary Computer CSS Best Practices
 
 ![yup](http://i.giphy.com/xTiTntB8WSMsSDZIDm.gif)
 
@@ -10,29 +10,32 @@ At Sanctuary Computer, we are constantly striving to find new ways to write scal
 
 <br>
 
-## CSS Composability Style
+## Style 1: Utility Style (Preferred)
 
-Write verbose HTML over verbose CSS. (It's easier to maintain one
-file than two!). Think of your CSS like little Lego bricks, rather
-than complex, hard-to-find identities.
+The primary style of CSS that we use is called "Utility Style". As a convention, we generally prefer verbose HTML over verbose CSS. (It's easier to maintain one file than two!). Think of your CSS like little Lego bricks, rather than complex, hard-to-find identities.
 
 Optimize for composability over semantics.
 
-**Good:** :thumbsup:
+**:thumbsup: Good:** 
 
 ```html
+<!-- ChatAppNotifcation.tsx -->
 <div
-  class="small-12 medium-3 large-2 columns background-color-mid-green padding-top text-center"
+  class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
 >
-  <h6 class="uppercase letter-spacing">Hello World!</h6>
+  <div class="flex-shrink-0">
+    <img class="h-12 w-12" src="/asset/sanc.png" alt="Sanctuary Logo" />
+  </div>
+  <div>
+    <div class="text-xl font-medium text-black">Sanctuary Chat Ap</div>
+    <p class="text-gray-500">You have a new message!</p>
+  </div>
 </div>
 ```
 
-In this example, I can visualize exactly how the file will look purely from
-reading the HTML, and I can remove an add an attribute simply by removing a
-Class.
+In this example, I can visualize exactly how the file will look purely from reading the HTML, and I can remove an add an attribute simply by removing a Class.
 
-**Bad:** :thumbsdown:
+**:thumbsdown: Less Good:**
 
 ```html
 <div class="hello-world-wrapper">
@@ -40,16 +43,16 @@ Class.
 </div>
 ```
 
-Here I have no idea what `.hello-world-wrapper` will look like, and making
+Here, we have no idea what `.hello-world-wrapper` will look like, and making
 changes means I have to search the codebase for its definition.
 
 ---
 
 <br>
 
-## Composability with Tailwind
+### Using Tailwind with Utility Style
 
-We recently adopted the utility-first CSS framework Tailwind to help us compose and standardize our utility classes. Tailwind bundles a variety of base utility classes like _flex_, _mt-4_, _overflow-hidden_, _items-center_ and _bg-white_. We can use these utility classes to build any design directly in our markup.
+We recently adopted the utility-first CSS framework Tailwind to help us compose and standardize our utility classes. Tailwind bundles a variety of base utility classes like `flex`, `mt-4`, `overflow-hidden`, `items-center` and `bg-white`. We can use these utility classes to build any design directly in our markup.
 
 As developers, we spend a significant amount of time thinking of class names rather than applying them. Unfortunately, we overcomplicate this process by creating extensive naming conventions that we use seldomly or disregard completely. Tailwind remedies this process by offering us a whole suite of well-composed utility class names that work right out of the box. Check it out!
 
@@ -59,7 +62,6 @@ _Code:_
 
 ```html
 <!-- ChatAppNotifcation.tsx -->
-
 <div
   class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
 >
@@ -102,69 +104,96 @@ _Result:_
 
 ![alt text](chat1.png "Title")
 
-This approach enables us to implement a completely custom component design without writing verbose and non-reusable class names. Let's try writing the exact `ChatAppNotifcation` component using semantic CSS
-
-```html
-<!-- ChatAppNotifcation.tsx -->
-
-<div class="chat-notification">
-  <div class="chat-notification-logo-wrapper">
-    <img
-      class="chat-notification-logo"
-      src="asset/sanc.png"
-      alt="ChitChat Logo"
-    />
-  </div>
-  <div class="chat-notification-content">
-    <h4 class="chat-notification-title">Sanctuary Chat App</h4>
-    <p class="chat-notification-message">You have a new message!</p>
-  </div>
-</div>
-
-<style>
-  .chat-notification {
-    display: flex;
-    max-width: 24rem;
-    margin: 0 auto;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-  .chat-notification-logo-wrapper {
-    flex-shrink: 0;
-  }
-  .chat-notification-logo {
-    height: 3rem;
-    width: 3rem;
-  }
-  .chat-notification-content {
-    margin-left: 1.5rem;
-    padding-top: 0.25rem;
-  }
-  .chat-notification-title {
-    color: #1a202c;
-    font-size: 1.25rem;
-    line-height: 1.25;
-  }
-  .chat-notification-message {
-    color: #718096;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-</style>
-```
-
-At first glance, I have no idea what `.chat-notification `will look like, and if we decide to make changes to this component, we have to search the codebase for its location and related definitions. In addition, zigzagging between an HTML/JSX and a CSS file to make sweeping changes through a codebase is hard, and when our codebase starts to scale, we will have to spend a significant amount of time trying to learn to reproduce these styles.
+This approach enables us to implement a completely custom component design without writing verbose and non-reusable class names.
 
 <br>
 
-## CSS file structure and extending tailwind
+## Style 2: Object Style Markup & CSS (Use sparingly)
 
-Even though we love tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting. We only create a CSS class for components that have styling needs that aren't possible by inlining tailwind classes. Just be sure to only use a semantic class when you’re styling it from a CSS file.
+Even though we love Tailwind - there are many occasions where we still need to write and maintain CSS conventions rather than just relying on tailwind to do all the heavy lifting. That's when we use "Object Style".
 
-Use `components`, `atoms`, `blocks`, and `elements` folders in your
-CSS file structure in tandem with your desired Tailwind configuration:
+Here's the guidelines for Object Style:
+- We only create a CSS class for components that have styling needs that aren't possible by inlining tailwind classes (like setting a hardcoded `width`). 
+- Every component will have it's component name in the first wrapping element (like `.Card` for `components/Card/index.tsx`).
+- Each component will only ever have a single CSS file (`styles/components/Card.scss` for `components/Card/index.tsx`).
+- Each component CSS file will only ever have a single "top-level" class (sibling classes should be nested with SCSS and [BEM](https://css-tricks.com/bem-101/), ensuring that styles don't unintentionally leak).
+- Each CSS declaration will only declare things that can't be decribed in "Utility Style" (mixing Utility Style with Object Style means **your HTML is as legible as possible**).
+
+<br>
+
+_Component JS Code:_
+
+```
+// This file is declared in /src/components/Card/index.tsx
+
+import React, { FC } from 'react';
+import cx from 'classnames';
+
+export type Props = {
+  title: string;
+  style:
+    | 'black-background'
+    | 'white-background-with-cta-long'
+    | 'white-background-with-cta';
+};
+
+const Card: FC<Props> = ({
+  title,
+  style,
+}) => {
+  return (
+    <div className={cx('Card', `Card--${style}`)}>
+      <div className="p-4 laptop:p-6">
+        {title && (
+          <span
+            className={cx('font-primary block', {
+              'text-primary-mobile-7xl tablet:text-primary-8xl':
+                style === 'black-background',
+              'text-primary-mobile-4xl tablet:text-primary-4xl':
+                style === 'white-background-with-cta-long' ||
+                style === 'white-background-with-cta',
+            })}
+          >
+            {title}
+          </span>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Card;
+```
+
+_Corresponding CSS Code:_
+
+```
+// This file is declared in src/styles/components/Card.scss
+
+.Card {
+  &--black-background {
+    width: 60rem;
+    background: theme('colors.black');
+    color: theme('colors.white');
+  }
+
+  &--white-background-with-cta-long {
+    width: 37.5rem;
+    background: theme('colors.white');
+    color: theme('colors.black');
+  }
+
+  &--white-background-with-cta {
+    width: 23.4375rem;
+    background: theme('colors.white');
+    color: theme('colors.black');
+  }
+}
+```
+
+## CSS Folder Structure
+
+Use `components`, `atoms`, `blocks`, and `elements` folders in your CSS file structure in tandem with your desired Tailwind configuration:
 
 ```
 -- dirroot
@@ -279,9 +308,9 @@ Real life examples that utilize this folder and file structure at Sanctuary.
 
 ---
 
-## React and Tailwind - Gotchas!
+## Tips & Gotchas!
 
-In this section, we have included common anti-patterns that exist when a new developer is being onboarded to a tailwind and react project.
+In this section, we have included common anti-patterns that exist when a new developer is being onboarded to a Tailwind and React project.
 
 <br>
 
@@ -291,7 +320,7 @@ In this section, we have included common anti-patterns that exist when a new dev
 
 When applying conditional classnames inline to our components, stray away from using ternary operators and instead use the [classnames](https://github.com/JedWatson/classnames) package.
 
-Do::thumbsup:
+**:thumbsup: Good:** 
 
 ```js
 import React from "react";
@@ -311,7 +340,7 @@ const Banner = ({ active, children, isError }) => (
 export default Banner;
 ```
 
-Dont: :thumbsdown:
+**:thumbsdown: Less Good:**
 
 ```js
 import React from "react";
@@ -331,14 +360,14 @@ export default Banner;
 
 <br>
 
-### **2. Avoid inline object styles**
+### **2. Avoid inline styles**
 
 <br>
 
 When styling components, do not rely on inline style objects because you couldn't find a convenient utility class in your tailwind configuration. Developers also tend to do this when they feel like writing a CSS file for a single line of code is a waste of time.
 
-Dont:
-:thumbsdown:
+**:thumbsdown: Not Great:**
+
 
 ```js
 const ProfileCard = ({ name, profileDescription, imageSrc }) => (
@@ -357,7 +386,7 @@ const ProfileCard = ({ name, profileDescription, imageSrc }) => (
 
 Instead, extend your `tailwind.config.js` to include the base styles you want! Then we can re-use these bases styles in tailwind for later purposes
 
-_do_: :thumbsup:
+**:thumbsup: Good:** 
 
 ```js
 module.exports = {
@@ -401,11 +430,11 @@ const ProfileCard = ({ name, profileDescription, imageSrc }) => (
 
 Occassionaly we are forced to use react inlineStyles. For example, when we have to change a height of a div based on a window dom parameter or an event listener. When you run into this scenerio, it's ok to get creative with inline styles :)
 
-### **3. Do not compose tailwind clasess in object styles**
+### **3. Don't obscure Tailwind classes in Object Style classes**
 
 <br>
 
-_Dont:_:thumbsdown:
+**:thumbsdown: Not Great:**
 
 ```css
 .AuthPanelButtonsWrapper {
@@ -413,10 +442,19 @@ _Dont:_:thumbsdown:
 }
 ```
 
-Don't do this, as it unnecessarily obscures CSS, just inline the classes in the DOM. It makes visualizing the component from markup much easier
+There's no need to do this, as it unnecessarily obscures CSS (and has potential to become CSS tech debt: what if you delete this div, but forgot to delete this CSS declaration?). Instead, just inline the classes in the DOM. It makes visualizing the component from markup much easier for you and your team!
 
 ---
 
+## What about styled-components?
+
+[styled-components](https://styled-components.com/) is cool, but we don't generally reach for it, because a) it can only be used with React (and we write views in Rails, Liquid, Elixir Phoenix, and many other rendering pipelines), and b) it adds a bit of overhead upfront, given that it kinda forces you to "build a design framework", rather than start styling straight away.
+
+As such, we tend to only use styled-components on projects that need a rigid design system or UIKit, like the [LightOS](https://github.com/sanctuarycomputer/light-two/tree/main/LightOS), or the [Swell Docs](https://swell.store/docs/api/#introduction).
+
 ## React Native and Tailwind
 
-Comming soon....
+Comming soon...
+
+
+
